@@ -2,6 +2,7 @@
 # Provision the single demo host in af-south-1. Idempotent: finds resources by tag/name.
 # Usage: deploy/provision.sh   (reads operator creds from ./.env; SSH_CIDR defaults to your current public IP/32)
 set -euo pipefail
+export MSYS_NO_PATHCONV=1   # Git Bash on Windows: stop /dev/sda1 being rewritten to a Windows path
 cd "$(dirname "$0")/.."
 set -a; . ./.env; set +a
 
@@ -40,7 +41,7 @@ if ! aws ec2 describe-key-pairs --key-names "$NAME" >/dev/null 2>&1; then
   mkdir -p "$KEY_DIR"
   aws ec2 create-key-pair --key-name "$NAME" --key-type ed25519 \
     --tag-specifications "ResourceType=key-pair,Tags=[{Key=Project,Value=$NAME}]" \
-    --query KeyMaterial --output text > "$KEY_FILE"
+    --query KeyMaterial --output text | tr -d '\r' > "$KEY_FILE"   # aws.exe on Windows emits CRLF
   chmod 600 "$KEY_FILE"
   echo "Saved private key to $KEY_FILE"
 fi
