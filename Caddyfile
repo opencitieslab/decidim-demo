@@ -1,5 +1,15 @@
 {$SITE_ADDRESS} {
 	encode zstd gzip
+
+	# Restrict the Decidim system panel to allow-listed IPs.
+	# Enforced here because Decidim 0.32.2's DECIDIM_SYSTEM_ACCESSLIST_IPS rule is inverted
+	# (it blocks the listed IPs and allows everyone else) — keep that variable EMPTY.
+	@system_denied {
+		path /system /system/*
+		not remote_ip {$SYSTEM_ALLOW_IPS:127.0.0.1}
+	}
+	respond @system_denied "Forbidden" 403
+
 	reverse_proxy app:3000
 	log {
 		output stdout

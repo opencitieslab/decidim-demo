@@ -51,7 +51,7 @@ dc exec app bin/rails decidim_system:create_admin
    # paste deploy/env.production.example into .env.production, then fill in:
    #   SECRET_KEY_BASE / DECIDIM_API_JWT_SECRET  -> openssl rand -hex 64
    #   DATABASE_PASSWORD                         -> openssl rand -hex 24
-   #   DECIDIM_SYSTEM_ACCESSLIST_IPS             -> OCL office/VPN IPs
+   #   SYSTEM_ALLOW_IPS                          -> OCL office/VPN IPs (Caddy-enforced; keep DECIDIM_SYSTEM_ACCESSLIST_IPS empty)
    #   SMTP_USERNAME / SMTP_PASSWORD             -> from step 3
    chmod 600 .env.production
    ```
