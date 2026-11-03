@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+.git
+node_modules
+tmp
+log
+storage
+public/packs
+public/decidim-packs
+public/uploads
+deploy/.host-ip
+docs
+*.pem
+config/master.key
+config/*.key

@@ -1,0 +1,14 @@
+# Decidim scheduled tasks (upstream list, docs/modules/install/pages/index.adoc @ v0.32.2)
+# Installed into the deploy user's crontab by deploy/deploy.sh
+SHELL=/bin/bash
+APP=/opt/decidim-demo
+RUN="cd $APP && docker compose exec -T app bin/rails"
+
+0 0 * * *    eval "$RUN decidim:delete_download_your_data_files"            >> $APP/log/cron.log 2>&1
+2 0 * * *    eval "$RUN decidim:open_data:export"                            >> $APP/log/cron.log 2>&1
+3 0 * * *    eval "$RUN decidim_meetings:clean_registration_forms"           >> $APP/log/cron.log 2>&1
+4 0 * * *    eval "$RUN decidim:reminders:all"                               >> $APP/log/cron.log 2>&1
+5 0 * * *    eval "$RUN decidim:mailers:notifications_digest_daily"          >> $APP/log/cron.log 2>&1
+5 0 * * 6    eval "$RUN decidim:mailers:notifications_digest_weekly"         >> $APP/log/cron.log 2>&1
+*/15 * * * * eval "$RUN decidim_participatory_processes:change_active_step"  >> $APP/log/cron.log 2>&1
+0 1 * * *    eval "$RUN decidim:participants:delete_inactive_participants"   >> $APP/log/cron.log 2>&1

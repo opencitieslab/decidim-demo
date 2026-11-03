@@ -1,0 +1,76 @@
+# Decidim 0.32.2 demo stack — single host.
+# Secrets come from .env.production on the host (never committed).
+x-app: &app
+  build: .
+  image: decidim-demo:latest
+  restart: unless-stopped
+  env_file: .env.production
+  environment:
+    RAILS_ENV: production
+    DATABASE_URL: postgres://decidim:${DATABASE_PASSWORD}@db:5432/decidim_production
+    REDIS_URL: redis://redis:6379/0
+    QUEUE_ADAPTER: sidekiq
+    RAILS_LOG_TO_STDOUT: "true"
+    RAILS_SERVE_STATIC_FILES: "true"
+  volumes:
+    - storage:/app/storage
+  depends_on:
+    db:
+      condition: service_healthy
+    redis:
+      condition: service_started
+
+services:
+  app:
+    <<: *app
+    command: bundle exec puma -C config/puma.rb
+    expose:
+      - "3000"
+
+  worker:
+    <<: *app
+    command: bundle exec sidekiq -C config/sidekiq.yml
+
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: decidim
+      POSTGRES_DB: decidim_production
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?set DATABASE_PASSWORD in .env.production}
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U decidim -d decidim_production"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-localhost}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - app
+
+volumes:
+  storage: {}
+  pg-data: {}
+  redis-data: {}
+  caddy-data: {}
+  caddy-config: {}

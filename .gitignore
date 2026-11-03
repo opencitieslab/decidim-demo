@@ -1,0 +1,43 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Rails / Decidim app
+/log/*
+/tmp/*
+/storage/*
+/public/uploads
+/public/packs
+/public/packs-test
+/public/assets
+/node_modules
+/.bundle
+/vendor/bundle
+/coverage
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local operator state
+deploy/.host-ip
+
+# From Decidim/Rails generator
+!/log/.keep
+!/tmp/.keep
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+!/storage/.keep
+/tmp/storage/*
+/config/*.key
+.envrc
+.rbenv-vars
+/public/decidim-packs
+/public/sw.js*
+tailwind.config.js
