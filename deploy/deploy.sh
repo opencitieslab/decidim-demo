@@ -23,7 +23,7 @@ mkdir -p log
 docker compose build app
 docker compose up -d db redis
 # NOT db:prepare/db:setup — those run db/seeds.rb, which creates well-known default accounts.
-docker compose run --rm app bin/rails db:create db:migrate
+docker compose run --rm -T app bin/rails db:create db:migrate < /dev/null
 docker compose up -d --remove-orphans
 crontab deploy/crontab
 docker image prune -f >/dev/null
