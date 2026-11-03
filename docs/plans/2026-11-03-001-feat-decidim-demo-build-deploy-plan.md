@@ -32,7 +32,7 @@ OCL needs a working Decidim instance on the latest release to explore features, 
 - **R5.** Background jobs and Decidim's scheduled tasks run.
 - **R6.** Secrets never committed; server secrets live only on the host.
 - **R7.** Follows the deploy-relevant rules in the Decidim repo's `.ai/security.md` (no seed/default accounts, forced SSL, private file serving, rate limiting, system panel locked down).
-- **R8.** Cheap to run and trivially stoppable/destroyable; all AWS resources tagged so they are distinguishable in the shared CivicView account.
+- **R8.** Cheap to run and trivially stoppable/destroyable; all AWS resources tagged so they are distinguishable in a shared AWS account.
 
 ---
 
@@ -58,7 +58,7 @@ OCL needs a working Decidim instance on the latest release to explore features, 
 - **KTD3. Build on the host** (`docker compose build` after `git pull`) rather than a registry. Avoids ECR + instance-role IAM work (our IAM user can't even list its own policies, so role creation is uncertain). Revisit under Deferred.
 - **KTD4. Uploads on local disk (Docker volume), not S3.** Sidesteps the generator's `AWS_PUBLIC=true` default and the upstream doc advice to disable S3 Block Public Access, which conflicts with `.ai/security.md` §5. Private files (ID docs, exports) are still streamed through Decidim's `PrivateDownloadsController`.
 - **KTD5. Caddy for TLS with Let's Encrypt HTTP-01; Cloudflare record DNS-only (grey cloud).** Proxied mode creates a cert chicken-and-egg with "Full (strict)" and hides client IPs from rack-attack. Can switch to proxied later with Cloudflare IP ranges as Caddy trusted proxies.
-- **KTD6. SES sandbox in af-south-1** with a verified sending domain (DKIM CNAMEs written via the Cloudflare API) and each tester address verified. Requires a dedicated least-privilege IAM user (`ses:SendRawEmail` only) for SMTP credentials — **must not** reuse the `civicview-agent` key on the server. If IAM user creation is denied, fall back to creating testers via the Rails console (R3 fallback).
+- **KTD6. SES sandbox in af-south-1** with a verified sending domain (DKIM CNAMEs written via the Cloudflare API) and each tester address verified. Requires a dedicated least-privilege IAM user (`ses:SendRawEmail` only) for SMTP credentials — **must not** reuse the operator key on the server. If IAM user creation is denied, fall back to creating testers via the Rails console (R3 fallback).
 - **KTD7. Scheduled tasks via host crontab** calling `docker compose exec -T app bin/rails …` — the upstream cron list, minus initiatives tasks unless that module is enabled.
 - **KTD8. Admin access hardening:** `DECIDIM_SYSTEM_ACCESSLIST_IPS` restricted to OCL IPs, SSH (22) limited to OCL IP in the security group, no `db:seed` in production.
 
@@ -224,11 +224,11 @@ decidim-demo/
 | Risk | Mitigation |
 |---|---|
 | Asset precompile OOMs on 4 GB host | 2 GB swap; if still failing, build locally on Docker Desktop and `docker save | ssh docker load`, or bump to t3.large for the build. |
-| `civicview-agent` lacks IAM rights (can't list its own policies) → can't create SES SMTP user or DLM role | Detect early in U4/U5; ask the account admin, or fall back (console-created users; manual snapshots). |
-| Shared AWS account (CivicView: 11 instances, 19 ECR repos) | Strict tagging; scripts select only by `Project=decidim-demo`. |
+| Operator IAM user lacks IAM rights (can't list its own policies) → can't create SES SMTP user or DLM role | Detect early in U4/U5; ask the account admin, or fall back (console-created users; manual snapshots). |
+| Shared AWS account with other workloads | Strict tagging; scripts select only by `Project=decidim-demo`. |
 | af-south-1 prices ~15–20% above us-east-1 | Accept for data residency narrative; stop instance when idle. |
 | SES sandbox: only verified recipients | Fine for a couple of testers; request production access only if the demo widens. |
-| Operator `.env` holds broad AWS + Cloudflare credentials | Never copied to the server; server gets only its own least-privilege SMTP creds. Consider rotating the `civicview-agent` key after setup. |
+| Operator `.env` holds broad AWS + Cloudflare credentials | Never copied to the server; server gets only its own least-privilege SMTP creds. Consider rotating the operator key after setup. |
 | Let's Encrypt rate limits on repeated rebuilds | Persist Caddy's data volume. |
 
 ---
@@ -245,4 +245,4 @@ decidim-demo/
 
 - Decidim repo at tag `v0.32.2`: `docs/modules/install/pages/index.adoc` (scheduled tasks, system admin bootstrap), `docs/modules/install/pages/checklist.adoc`, `docs/modules/services/pages/activestorage.adoc`, `decidim-generators/lib/decidim/generators/app_templates/{storage.yml,sidekiq.yml.erb,Dockerfile.erb}`, `decidim-core/app/controllers/decidim/private_downloads_controller.rb`, `.ai/security.md`.
 - Docker Hub `decidim/decidim` tags (2026-11-03): latest `0.31.6`, no 0.32.x.
-- Environment probes (2026-11-03): af-south-1 opted in; EC2 `RunInstances` dry-run succeeds for `civicview-agent`; SES af-south-1 sending enabled, production access false (sandbox); Cloudflare token lists `opencitieslab.*` zones.
+- Environment probes (2026-11-03): af-south-1 opted in; EC2 `RunInstances` dry-run succeeds for the operator IAM user; SES af-south-1 sending enabled, production access false (sandbox); Cloudflare token lists `opencitieslab.*` zones.
