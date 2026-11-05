@@ -40,7 +40,7 @@ This is a demo, not production. We optimise for cost and speed and accept machin
 
 ## Requirements
 
-- **R1. Real CCT data, one command:** an idempotent seed loads the following from `docs/research/cct-seed-sources.json`:
+- **R1. Real CCT data, one command:** an idempotent seed loads the following from `db/seeds/cct/cct-seed-sources.json`:
   - subcouncils and wards;
   - IDP themes;
   - real participation items as processes and components;
@@ -112,7 +112,7 @@ This is a demo, not production. We optimise for cost and speed and accept machin
 - **KTD6. Registration fields stored in `users.extended_data`** (surname, phone, ward) via form/command decorators and a view override of the registration and account forms. Phone is validated as a South African mobile (E.164 normalised `+27…`) and never shown publicly. Decidim's `DestroyAccount` does **not** clear `extended_data`, so we decorate it to wipe these keys.
 - **KTD7. "Alert a group" = admin action that sends a Decidim notification** (in-app, plus email once SMTP works) to all members, linking to a chosen space. It reuses Decidim's event system rather than the newsletter, whose targeting can't select individual groups.
 - **KTD8. Seed is a rake task over two data files:**
-  - `docs/research/cct-seed-sources.json` (real, sourced);
+  - `db/seeds/cct/cct-seed-sources.json` (real, sourced);
   - `db/seeds/cct/demo_content.yml` (fictional inputs + af/xh translations, agent-generated, human-skimmable).
 
   It is idempotent: it upserts by stable keys (slugs / item URL). It never runs Decidim's own `db:seed`, which creates default accounts.
@@ -390,7 +390,7 @@ decidim-demo/
 - `lib/tasks/cct.rake` (`cct:seed`, `cct:seed:reset_demo_content`)
 - `lib/cct/seed/` builders: organization, taxonomies, processes, proposals, budgets, meetings, surveys, participatory texts, blog, pages, users, groups
 - `db/seeds/cct/demo_content.yml`
-- `docs/research/cct-seed-sources.json` (input)
+- `db/seeds/cct/cct-seed-sources.json` (input)
 - `spec/cct/seed_spec.rb`
 
 **Approach:**
@@ -497,7 +497,7 @@ decidim-demo/
 
 ## Sources & Research
 
-- `docs/research/2026-11-05-cct-public-participation-sources.md` and `docs/research/cct-seed-sources.json`: 20 subcouncils, 118 wards, 9 themes, 25 real items, 2026/27 budget (R87.71bn; ward allocation R1m/ward), venues, af/xh glossary. Every row has a source URL.
+- `docs/research/2026-11-05-cct-public-participation-sources.md` and `db/seeds/cct/cct-seed-sources.json`: 20 subcouncils, 118 wards, 9 themes, 25 real items, 2026/27 budget (R87.71bn; ward allocation R1m/ward), venues, af/xh glossary. Every row has a source URL.
 - Tender 92S/2026/27 p13 (D2 user groups; D4 campaign alerts and geographic linking), p12 (D1 languages).
 - Decidim v0.32.2:
   - `decidim-core/app/forms/decidim/registration_form.rb`, `app/commands/decidim/create_registration.rb`;

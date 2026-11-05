@@ -1,6 +1,6 @@
 # City of Cape Town public participation: seed sources for the Decidim demo
 
-Researched 2026-11-05. Machine-readable companion: [`cct-seed-sources.json`](cct-seed-sources.json).
+Researched 2026-11-05. Machine-readable companion: [`db/seeds/cct/cct-seed-sources.json`](../../db/seeds/cct/cct-seed-sources.json).
 Scope: official CCT sources were preferred, with reputable SA news used to corroborate them. No personal data was collected. Councillor and official names are deliberately left out. All summaries are paraphrased.
 
 > **Headline corrections to the brief**
