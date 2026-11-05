@@ -3,6 +3,57 @@ en:
   locale:
     name: English
     name_with_error: English (error!)
+  activemodel:
+    attributes:
+      user:
+        phone: Mobile number
+        surname: Surname
+        ward: Ward
+    errors:
+      models:
+        user:
+          attributes:
+            phone:
+              invalid_sa_mobile: is not a South African mobile number (for example 082 123 4567)
+            ward:
+              inclusion: is not a City of Cape Town ward
   cct:
-    # Placeholder namespace for CCT customisations (groups, registration fields, disclaimer).
     demo_label: Demo
+    resident_fields:
+      phone_help: Optional. A South African mobile number. It is kept private and we do not send SMS.
+      surname_help: Optional. It is kept private and never shown on your public profile or next to your contributions.
+      ward_help: The ward where you live (self-declared). Some consultations and ward budgets are open only to residents of certain wards.
+      ward_prompt: Select your ward
+    ward_resident:
+      authorizer:
+        missing:
+          one: This action is only open to residents of ward %{wards}. Add your ward to your account to take part.
+          other: This action is only open to residents of wards %{wards}. Add your ward to your account to take part.
+        missing_any_ward: This action is only open to ward residents. Add your ward to your account to take part.
+        unauthorized:
+          one: This action is only open to residents of ward %{wards}. Your account says you live in ward %{user_ward}. If you have moved, update your ward in your account.
+          other: This action is only open to residents of wards %{wards}. Your account says you live in ward %{user_ward}. If you have moved, update your ward in your account.
+      set_ward_notice: Set or update your ward below, then save your account.
+    wards:
+      option: Ward %{number} — Subcouncil %{subcouncil} (%{area})
+  decidim:
+    authorization_handlers:
+      cct_ward_resident:
+        explanation: The ward you live in, as set in your account. Some actions are open only to residents of certain wards.
+        fields:
+          allowed_wards: Allowed wards
+          allowed_wards_help: Ward numbers separated by commas, for example 23, 57. Leave empty to allow residents of any ward.
+          ward: Ward
+        name: Ward resident (self-declared)
+    authorization_modals:
+      content:
+        missing:
+          set_ward: Set your ward in your account
+        unauthorized:
+          update_ward: Update your ward
+    download_your_data:
+      help:
+        users:
+          phone_e164: Your mobile number, in international format
+          surname: Your surname
+          ward: The ward you declared you live in

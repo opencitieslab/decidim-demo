@@ -3,5 +3,57 @@ xh:
   locale:
     name: isiXhosa
     name_with_error: isiXhosa (impazamo!)
+  activemodel:
+    attributes:
+      user:
+        phone: Inombolo yeselfowuni
+        surname: Ifani
+        ward: Iwadi
+    errors:
+      models:
+        user:
+          attributes:
+            phone:
+              invalid_sa_mobile: ayiyonombolo yeselfowuni yaseMzantsi Afrika (umzekelo 082 123 4567)
+            ward:
+              inclusion: ayiyowadi yeSixeko saseKapa
   cct:
     demo_label: Umboniso
+    resident_fields:
+      phone_help: Ayinyanzelekanga. Inombolo yeselfowuni yaseMzantsi Afrika. Igcinwa iyimfihlo kwaye asithumeli SMS.
+      surname_help: Ayinyanzelekanga. Igcinwa iyimfihlo kwaye ayiboniswa kwiprofayile yakho yoluntu okanye ecaleni kwegalelo lakho.
+      ward_help: Iwadi ohlala kuyo (ozichazele yona). Ezinye iingxoxo kunye noohlahlo-lwabiwo-mali lwewadi zivulelekile kuphela kubahlali beewadi ezithile.
+      ward_prompt: Khetha iwadi yakho
+    ward_resident:
+      authorizer:
+        missing:
+          one: Esi senzo sivulelekile kuphela kubahlali bewadi %{wards}. Yongeza iwadi yakho kwiakhawunti yakho ukuze uthathe inxaxheba.
+          other: Esi senzo sivulelekile kuphela kubahlali beewadi %{wards}. Yongeza iwadi yakho kwiakhawunti yakho ukuze uthathe inxaxheba.
+        missing_any_ward: Esi senzo sivulelekile kuphela kubahlali bewadi. Yongeza iwadi yakho kwiakhawunti yakho ukuze uthathe inxaxheba.
+        unauthorized:
+          one: Esi senzo sivulelekile kuphela kubahlali bewadi %{wards}. Ngokwe-akhawunti yakho uhlala kwiwadi %{user_ward}. Ukuba ufudukile, hlaziya iwadi yakho kwiakhawunti yakho.
+          other: Esi senzo sivulelekile kuphela kubahlali beewadi %{wards}. Ngokwe-akhawunti yakho uhlala kwiwadi %{user_ward}. Ukuba ufudukile, hlaziya iwadi yakho kwiakhawunti yakho.
+      set_ward_notice: Khetha okanye uhlaziye iwadi yakho apha ngezantsi, uze ugcine iakhawunti yakho.
+    wards:
+      option: Iwadi %{number} — iBhungana %{subcouncil} (%{area})
+  decidim:
+    authorization_handlers:
+      cct_ward_resident:
+        explanation: Iwadi ohlala kuyo, njengoko imiselwe kwiakhawunti yakho. Ezinye izenzo zivulelekile kuphela kubahlali beewadi ezithile.
+        fields:
+          allowed_wards: Iiwadi ezivumelekileyo
+          allowed_wards_help: Iinombolo zeewadi ezahlulwe ngeekoma, umzekelo 23, 57. Yishiye ingenanto ukuvumela abahlali bayo nayiphi na iwadi.
+          ward: Iwadi
+        name: Umhlali wewadi (ozichazele yona)
+    authorization_modals:
+      content:
+        missing:
+          set_ward: Misela iwadi yakho kwiakhawunti yakho
+        unauthorized:
+          update_ward: Hlaziya iwadi yakho
+    download_your_data:
+      help:
+        users:
+          phone_e164: Inombolo yakho yeselfowuni, ngohlobo lwamazwe ngamazwe
+          surname: Ifani yakho
+          ward: Iwadi othe uhlala kuyo

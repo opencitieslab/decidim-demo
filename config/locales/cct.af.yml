@@ -3,5 +3,57 @@ af:
   locale:
     name: Afrikaans
     name_with_error: Afrikaans (fout!)
+  activemodel:
+    attributes:
+      user:
+        phone: Selfoonnommer
+        surname: Van
+        ward: Wyk
+    errors:
+      models:
+        user:
+          attributes:
+            phone:
+              invalid_sa_mobile: is nie 'n Suid-Afrikaanse selfoonnommer nie (byvoorbeeld 082 123 4567)
+            ward:
+              inclusion: is nie 'n wyk van Stad Kaapstad nie
   cct:
     demo_label: Demonstrasie
+    resident_fields:
+      phone_help: Opsioneel. 'n Suid-Afrikaanse selfoonnommer. Dit word privaat gehou en ons stuur nie SMS'e nie.
+      surname_help: Opsioneel. Dit word privaat gehou en nooit op jou openbare profiel of langs jou bydraes gewys nie.
+      ward_help: Die wyk waar jy woon (self verklaar). Sommige konsultasies en wyksbegrotings is net oop vir inwoners van sekere wyke.
+      ward_prompt: Kies jou wyk
+    ward_resident:
+      authorizer:
+        missing:
+          one: Hierdie aksie is net oop vir inwoners van wyk %{wards}. Voeg jou wyk by jou rekening om deel te neem.
+          other: Hierdie aksie is net oop vir inwoners van wyke %{wards}. Voeg jou wyk by jou rekening om deel te neem.
+        missing_any_ward: Hierdie aksie is net oop vir wyksinwoners. Voeg jou wyk by jou rekening om deel te neem.
+        unauthorized:
+          one: Hierdie aksie is net oop vir inwoners van wyk %{wards}. Volgens jou rekening woon jy in wyk %{user_ward}. As jy getrek het, werk jou wyk in jou rekening by.
+          other: Hierdie aksie is net oop vir inwoners van wyke %{wards}. Volgens jou rekening woon jy in wyk %{user_ward}. As jy getrek het, werk jou wyk in jou rekening by.
+      set_ward_notice: Kies of werk jou wyk hieronder by en stoor dan jou rekening.
+    wards:
+      option: Wyk %{number} — Subraad %{subcouncil} (%{area})
+  decidim:
+    authorization_handlers:
+      cct_ward_resident:
+        explanation: Die wyk waar jy woon, soos in jou rekening gestel. Sommige aksies is net oop vir inwoners van sekere wyke.
+        fields:
+          allowed_wards: Toegelate wyke
+          allowed_wards_help: Wyksnommers geskei deur kommas, byvoorbeeld 23, 57. Laat leeg om inwoners van enige wyk toe te laat.
+          ward: Wyk
+        name: Wyksinwoner (self verklaar)
+    authorization_modals:
+      content:
+        missing:
+          set_ward: Stel jou wyk in jou rekening
+        unauthorized:
+          update_ward: Werk jou wyk by
+    download_your_data:
+      help:
+        users:
+          phone_e164: Jou selfoonnommer, in internasionale formaat
+          surname: Jou van
+          ward: Die wyk waar jy verklaar het jy woon

@@ -1,0 +1,7 @@
+<%# Surname, ward and mobile number (plan U4). Shared by the registration and account forms. %>
+<%= form.text_field :surname, autocomplete: "family-name", help_text: t("cct.resident_fields.surname_help") %>
+<%= form.select :ward,
+                Cct::Wards.options,
+                { include_blank: t("cct.resident_fields.ward_prompt"), help_text: t("cct.resident_fields.ward_help") },
+                { autocomplete: "off" } %>
+<%= form.text_field :phone, type: "tel", autocomplete: "tel", inputmode: "tel", placeholder: "082 123 4567", help_text: t("cct.resident_fields.phone_help") %>
