@@ -1,0 +1,1749 @@
+{
+  "generated": "2026-11-05",
+  "description": "Seed sources for a Decidim demo based on City of Cape Town public participation. All items link to public sources. No personal data.",
+  "subcouncils": [
+    {
+      "number": 1,
+      "name": "Subcouncil 1",
+      "wards_2021_delimitation": [
+        23,
+        29,
+        32,
+        107
+      ],
+      "area_description": "Atlantis, Mamre, Melkbosstrand, Bloubergstrand, Table View, Parklands, West Beach, Big Bay, Sunningdale",
+      "office_address": "Municipal Offices, cnr Grosvenor and Hermes Ave, Saxonsea, Atlantis",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 2,
+      "name": "Subcouncil 2",
+      "wards_2021_delimitation": [
+        6,
+        7,
+        8,
+        101,
+        102,
+        111
+      ],
+      "area_description": "Brackenfell, Kraaifontein, Scottsdene, Wallacedene, Haasendal, Vredekloof and surrounds",
+      "office_address": "Municipal Offices, 87 Brighton Way, Kraaifontein",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 3,
+      "name": "Subcouncil 3",
+      "wards_2021_delimitation": [
+        4,
+        55,
+        56,
+        104,
+        113
+      ],
+      "area_description": "Milnerton, Dunoon, Edgemead, Plattekloof, Montague Gardens, Century City, Joe Slovo Park, Kensington, Maitland and surrounds",
+      "office_address": "Milnerton Municipal Building, 1st Floor, Royal Ascot, Bridle Way, Milnerton",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 4,
+      "name": "Subcouncil 4",
+      "wards_2021_delimitation": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "area_description": "Bishop Lavis, Elsies River, Goodwood, Parow Valley, Ruyterwacht, Ravensmead, Uitsig",
+      "office_address": "Municipal Offices, cnr Voortrekker and Tallent Rds, Parow",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 5,
+      "name": "Subcouncil 5",
+      "wards_2021_delimitation": [
+        12,
+        13,
+        20,
+        22,
+        24,
+        106
+      ],
+      "area_description": "Belhar, Bellville, Kuils River, Delft, The Hague, Voorbrug, airport area",
+      "office_address": "Municipal Offices, cnr Jakkelsvlei Ave and Kiaat Rd, Bonteheuwel",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 6,
+      "name": "Subcouncil 6",
+      "wards_2021_delimitation": [
+        2,
+        3,
+        9,
+        10
+      ],
+      "area_description": "Bellville CBD, Parow, Boston, Oakdale, Bellville South, Voortrekker Road corridor",
+      "office_address": "Municipal Offices, Voortrekker Road, Bellville",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 7,
+      "name": "Subcouncil 7",
+      "wards_2021_delimitation": [
+        1,
+        5,
+        21,
+        70,
+        103,
+        105,
+        112
+      ],
+      "area_description": "Durbanville, Fisantekraal, Bothasig, Welgemoed, Panorama, Edgemead, Cape Farms",
+      "office_address": "Municipal Offices, Oxford Street, Durbanville",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 8,
+      "name": "Subcouncil 8",
+      "wards_2021_delimitation": [
+        15,
+        83,
+        84,
+        85,
+        86,
+        100,
+        109
+      ],
+      "area_description": "Somerset West, Strand, Gordon's Bay, Macassar, Sir Lowry's Pass, Nomzamo, Lwandle",
+      "office_address": "Municipal Offices, cnr Fagan Street and Main Road, Strand",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 9,
+      "name": "Subcouncil 9",
+      "wards_2021_delimitation": [
+        18,
+        87,
+        89,
+        90,
+        91,
+        93
+      ],
+      "area_description": "Blue Downs, Mfuleni, Driftsands, Khayelitsha (Victoria Mxenge, Nonqubela, Thembokwezi)",
+      "office_address": "Site B, cnr Bonga & Sulani Dr, Khayelitsha Shopping Centre, Khayelitsha",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 10,
+      "name": "Subcouncil 10",
+      "wards_2021_delimitation": [
+        94,
+        95,
+        96,
+        97,
+        98,
+        99
+      ],
+      "area_description": "Khayelitsha (Kuyasa, Harare, Ilitha Park, Monwabisi)",
+      "office_address": "Khayelitsha Training Centre, cnr Lwandle & Phendula Cres, Khayelitsha",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 11,
+      "name": "Subcouncil 11",
+      "wards_2021_delimitation": [
+        30,
+        44,
+        46,
+        47,
+        48,
+        49,
+        60
+      ],
+      "area_description": "Athlone, Bridgetown, Manenberg, Heideveld, Rylands, Gatesville, Lansdowne",
+      "office_address": "Dulcie September Civic Centre, cnr Protea & Klipfontein Rd, Kewtown, Athlone",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 12,
+      "name": "Subcouncil 12",
+      "wards_2021_delimitation": [
+        35,
+        76,
+        82,
+        92,
+        116
+      ],
+      "area_description": "Mitchells Plain east (Beacon Valley, Eastridge, Lentegeur, Tafelsig)",
+      "office_address": "Lentegeur Admin Building, cnr Melkbos & Merrydale Rds, Lentegeur",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 13,
+      "name": "Subcouncil 13",
+      "wards_2021_delimitation": [
+        34,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        80
+      ],
+      "area_description": "Crossroads, Gugulethu, Nyanga",
+      "office_address": "Fezeka Building, cnr Steve Biko Dr and Lansdowne Rd, Gugulethu",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 14,
+      "name": "Subcouncil 14",
+      "wards_2021_delimitation": [
+        11,
+        14,
+        16,
+        17,
+        19,
+        108,
+        114
+      ],
+      "area_description": "Blackheath, Blue Downs, Eerste River, Kleinvlei, Kuils River",
+      "office_address": "Fezeka Building, cnr Steve Biko Dr and Lansdowne Rd, Gugulethu (as published; verify)",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 15,
+      "name": "Subcouncil 15",
+      "wards_2021_delimitation": [
+        31,
+        42,
+        50,
+        51,
+        52
+      ],
+      "area_description": "Langa, Pinelands, Kensington, Maitland",
+      "office_address": "Pinelands Training Centre, St Stephens Rd, Central Square, Pinelands",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 16,
+      "name": "Subcouncil 16",
+      "wards_2021_delimitation": [
+        53,
+        54,
+        57,
+        77,
+        115
+      ],
+      "area_description": "CBD, Bo-Kaap, Gardens, Sea Point, Green Point, Camps Bay, Woodstock, Observatory",
+      "office_address": "11th Floor, 44 Wale Street, Cape Town",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 17,
+      "name": "Subcouncil 17",
+      "wards_2021_delimitation": [
+        33,
+        43,
+        75,
+        78,
+        79,
+        81,
+        88
+      ],
+      "area_description": "Philippi, Mitchells Plain (Rocklands, Westridge), Strandfontein",
+      "office_address": "Lentegeur Admin Building, cnr Melkbos & Merrydale Rds, Lentegeur (as published; verify)",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 18,
+      "name": "Subcouncil 18",
+      "wards_2021_delimitation": [
+        65,
+        66,
+        67,
+        68,
+        72,
+        110
+      ],
+      "area_description": "Grassy Park, Retreat, Ottery, Plumstead, Lotus River",
+      "office_address": "cnr Buck Road and 6th Avenue, Lotus River",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 19,
+      "name": "Subcouncil 19",
+      "wards_2021_delimitation": [
+        45,
+        61,
+        64,
+        69
+      ],
+      "area_description": "Muizenberg, Fish Hoek, Kalk Bay, Simon's Town, Kommetjie, Noordhoek, Ocean View",
+      "office_address": "Municipal Offices, Central Circle, off Recreation Road, Fish Hoek",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    },
+    {
+      "number": 20,
+      "name": "Subcouncil 20",
+      "wards_2021_delimitation": [
+        58,
+        59,
+        62,
+        63,
+        71,
+        73,
+        74
+      ],
+      "area_description": "Claremont, Rondebosch, Newlands, Wynberg, Constantia, Tokai, Hout Bay, Kenilworth",
+      "office_address": "Alphen Centre, Main Road, Constantia",
+      "sources": {
+        "wards": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30",
+        "areas": "https://capetown.govocal.com/web_api/v1/areas",
+        "office": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Forms,%20notices,%20tariffs%20and%20lists/HYS_2025-26Budget_Venues_List.pdf"
+      }
+    }
+  ],
+  "wards": [
+    {
+      "number": 1,
+      "subcouncil": 7,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 2,
+      "subcouncil": 6,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 3,
+      "subcouncil": 6,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 4,
+      "subcouncil": 3,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 5,
+      "subcouncil": 7,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 6,
+      "subcouncil": 2,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 7,
+      "subcouncil": 2,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 8,
+      "subcouncil": 2,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 9,
+      "subcouncil": 6,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 10,
+      "subcouncil": 6,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 11,
+      "subcouncil": 14,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 12,
+      "subcouncil": 5,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 13,
+      "subcouncil": 5,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 14,
+      "subcouncil": 14,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 15,
+      "subcouncil": 8,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 16,
+      "subcouncil": 14,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 17,
+      "subcouncil": 14,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 18,
+      "subcouncil": 9,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 19,
+      "subcouncil": 14,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 20,
+      "subcouncil": 5,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 21,
+      "subcouncil": 7,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 22,
+      "subcouncil": 5,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 23,
+      "subcouncil": 1,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 24,
+      "subcouncil": 5,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 25,
+      "subcouncil": 4,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 26,
+      "subcouncil": 4,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 27,
+      "subcouncil": 4,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 28,
+      "subcouncil": 4,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 29,
+      "subcouncil": 1,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 30,
+      "subcouncil": 11,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 31,
+      "subcouncil": 15,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 32,
+      "subcouncil": 1,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 33,
+      "subcouncil": 17,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 34,
+      "subcouncil": 13,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 35,
+      "subcouncil": 12,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 36,
+      "subcouncil": 13,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 37,
+      "subcouncil": 13,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 38,
+      "subcouncil": 13,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 39,
+      "subcouncil": 13,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 40,
+      "subcouncil": 13,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 41,
+      "subcouncil": 13,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 42,
+      "subcouncil": 15,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 43,
+      "subcouncil": 17,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 44,
+      "subcouncil": 11,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 45,
+      "subcouncil": 19,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 46,
+      "subcouncil": 11,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 47,
+      "subcouncil": 11,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 48,
+      "subcouncil": 11,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 49,
+      "subcouncil": 11,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 50,
+      "subcouncil": 15,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 51,
+      "subcouncil": 15,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 52,
+      "subcouncil": 15,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 53,
+      "subcouncil": 16,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 54,
+      "subcouncil": 16,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 55,
+      "subcouncil": 3,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 56,
+      "subcouncil": 3,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 57,
+      "subcouncil": 16,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 58,
+      "subcouncil": 20,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 59,
+      "subcouncil": 20,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 60,
+      "subcouncil": 11,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 61,
+      "subcouncil": 19,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 62,
+      "subcouncil": 20,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 63,
+      "subcouncil": 20,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 64,
+      "subcouncil": 19,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 65,
+      "subcouncil": 18,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 66,
+      "subcouncil": 18,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 67,
+      "subcouncil": 18,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 68,
+      "subcouncil": 18,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 69,
+      "subcouncil": 19,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 70,
+      "subcouncil": 7,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 71,
+      "subcouncil": 20,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 72,
+      "subcouncil": 18,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 73,
+      "subcouncil": 20,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 74,
+      "subcouncil": 20,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 75,
+      "subcouncil": 17,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 76,
+      "subcouncil": 12,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 77,
+      "subcouncil": 16,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 78,
+      "subcouncil": 17,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 79,
+      "subcouncil": 17,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 80,
+      "subcouncil": 13,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 81,
+      "subcouncil": 17,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 82,
+      "subcouncil": 12,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 83,
+      "subcouncil": 8,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 84,
+      "subcouncil": 8,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 85,
+      "subcouncil": 8,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 86,
+      "subcouncil": 8,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 87,
+      "subcouncil": 9,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 88,
+      "subcouncil": 17,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 89,
+      "subcouncil": 9,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 90,
+      "subcouncil": 9,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 91,
+      "subcouncil": 9,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 92,
+      "subcouncil": 12,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 93,
+      "subcouncil": 9,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 94,
+      "subcouncil": 10,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 95,
+      "subcouncil": 10,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 96,
+      "subcouncil": 10,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 97,
+      "subcouncil": 10,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 98,
+      "subcouncil": 10,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 99,
+      "subcouncil": 10,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 100,
+      "subcouncil": 8,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 101,
+      "subcouncil": 2,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 102,
+      "subcouncil": 2,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 103,
+      "subcouncil": 7,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 104,
+      "subcouncil": 3,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 105,
+      "subcouncil": 7,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 106,
+      "subcouncil": 5,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 107,
+      "subcouncil": 1,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 108,
+      "subcouncil": 14,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 109,
+      "subcouncil": 8,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 110,
+      "subcouncil": 18,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 111,
+      "subcouncil": 2,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 112,
+      "subcouncil": 7,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 113,
+      "subcouncil": 3,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 114,
+      "subcouncil": 14,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 115,
+      "subcouncil": 16,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 116,
+      "subcouncil": 12,
+      "delimitation": "2021 (116 wards)",
+      "source": "https://openbylaws.org.za/akn/za-cpt/act/by-law/2003/sub-council/eng@2024-08-30"
+    },
+    {
+      "number": 117,
+      "subcouncil": 1,
+      "delimitation": "2026 (new ward; effective after 4 Nov 2026 election)",
+      "note": "New ward per MDB 2026 delimitation (West Beach, Parklands, Sandown area). Subcouncil inferred from centroid in ODP Subcouncils layer; not yet in by-law schedule.",
+      "source": "https://novanews.co.za/tygerburger/?p=322387"
+    },
+    {
+      "number": 118,
+      "subcouncil": 14,
+      "delimitation": "2026 (new ward per ODP layer; UNVERIFIED by news/official text)",
+      "note": "Appears in ODP Wards layer (WARD_YEAR 2026). Centroid falls in 'Driftsands' official planning suburb and Subcouncil 14 polygon. Inferred only.",
+      "source": "https://esapqa.capetown.gov.za/agsext/rest/services/Theme_Based/ODP_SPLIT_5/FeatureServer/6"
+    }
+  ],
+  "themes": [
+    {
+      "key": "economic_growth",
+      "name": "Economic growth",
+      "type": "IDP priority",
+      "objectives": [
+        "1. Increased jobs and investment in the Cape Town economy",
+        "3. End load-shedding in Cape Town over time"
+      ],
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/City%20strategies,%20plans%20and%20frameworks/IDP_2022-2027_Summary.pdf",
+      "note": "Priority/foundation names from IDP 2022-27 poster; objective-to-priority grouping inferred from objective numbering (verify against full IDP)."
+    },
+    {
+      "key": "basic_services",
+      "name": "Basic services",
+      "type": "IDP priority",
+      "objectives": [
+        "2. Improved access to quality and reliable basic services",
+        "4. Well-managed and modernised infrastructure"
+      ],
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/City%20strategies,%20plans%20and%20frameworks/IDP_2022-2027_Summary.pdf",
+      "note": "Priority/foundation names from IDP 2022-27 poster; objective-to-priority grouping inferred from objective numbering (verify against full IDP)."
+    },
+    {
+      "key": "safety",
+      "name": "Safety",
+      "type": "IDP priority",
+      "objectives": [
+        "5. Effective law enforcement to make communities safer",
+        "6. Strengthen partnerships for safer communities"
+      ],
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/City%20strategies,%20plans%20and%20frameworks/IDP_2022-2027_Summary.pdf",
+      "note": "Priority/foundation names from IDP 2022-27 poster; objective-to-priority grouping inferred from objective numbering (verify against full IDP)."
+    },
+    {
+      "key": "housing",
+      "name": "Housing",
+      "type": "IDP priority",
+      "objectives": [
+        "7. Increased supply of affordable, well-located homes",
+        "8. Safer, better-quality homes in informal settlements"
+      ],
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/City%20strategies,%20plans%20and%20frameworks/IDP_2022-2027_Summary.pdf",
+      "note": "Priority/foundation names from IDP 2022-27 poster; objective-to-priority grouping inferred from objective numbering (verify against full IDP)."
+    },
+    {
+      "key": "public_space_environment",
+      "name": "Public space, environment and amenities",
+      "type": "IDP priority",
+      "objectives": [
+        "9. Healthy and sustainable environment",
+        "10. Clean and healthy waterways and beaches",
+        "11. Quality and safe parks and recreation facilities supported by community partnerships"
+      ],
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/City%20strategies,%20plans%20and%20frameworks/IDP_2022-2027_Summary.pdf",
+      "note": "Priority/foundation names from IDP 2022-27 poster; objective-to-priority grouping inferred from objective numbering (verify against full IDP)."
+    },
+    {
+      "key": "transport",
+      "name": "Transport",
+      "type": "IDP priority",
+      "objectives": [
+        "12. A sustainable transport system that is integrated, efficient and provides safe and affordable travel options for all",
+        "13. Safe and quality roads for pedestrians, cyclists and vehicles"
+      ],
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/City%20strategies,%20plans%20and%20frameworks/IDP_2022-2027_Summary.pdf",
+      "note": "Priority/foundation names from IDP 2022-27 poster; objective-to-priority grouping inferred from objective numbering (verify against full IDP)."
+    },
+    {
+      "key": "resilience",
+      "name": "A resilient city",
+      "type": "IDP foundation",
+      "objectives": [
+        "14. A resilient city"
+      ],
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/City%20strategies,%20plans%20and%20frameworks/IDP_2022-2027_Summary.pdf",
+      "note": "Priority/foundation names from IDP 2022-27 poster; objective-to-priority grouping inferred from objective numbering (verify against full IDP)."
+    },
+    {
+      "key": "spatial_integration",
+      "name": "A more spatially integrated and inclusive city",
+      "type": "IDP foundation",
+      "objectives": [
+        "15. A more spatially integrated and inclusive city"
+      ],
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/City%20strategies,%20plans%20and%20frameworks/IDP_2022-2027_Summary.pdf",
+      "note": "Priority/foundation names from IDP 2022-27 poster; objective-to-priority grouping inferred from objective numbering (verify against full IDP)."
+    },
+    {
+      "key": "capable_government",
+      "name": "A capable and collaborative city government",
+      "type": "IDP foundation",
+      "objectives": [
+        "16. A capable and collaborative city government"
+      ],
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/City%20strategies,%20plans%20and%20frameworks/IDP_2022-2027_Summary.pdf",
+      "note": "Priority/foundation names from IDP 2022-27 poster; objective-to-priority grouping inferred from objective numbering (verify against full IDP)."
+    }
+  ],
+  "items": [
+    {
+      "title": "Comment on the City's draft Budget for 2026-2027",
+      "summary": "The Mayor tabled the 'City of Hope' draft budget on 31 March 2026, built around a three-year R40bn infrastructure programme (water and sanitation the largest share). Residents could comment online, by email, by phone or at subcouncil offices. The IDP 2022-27 review amendments were advertised alongside it.",
+      "dates": {
+        "open": "2026-04-01",
+        "close": "2026-04-30"
+      },
+      "department": "Finance (Budgets)",
+      "area": "City-wide",
+      "theme": "capable_government",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/draft-budget-2026-2027",
+      "other_urls": [
+        "https://www.capetown.gov.za/Media-and-news/Cape%20Town%20tables%20R40%20billion%20basic%20infrastructure%20budget%20to%20improve%20services%20to%20all"
+      ]
+    },
+    {
+      "title": "Comment on Amendments to 2026/27 March Tabled Budget",
+      "summary": "After the Western Cape High Court set aside the City's property-value-linked fixed water, sanitation and cleaning charges, the City reopened comment on tariff-side amendments only: a return to meter-size-based fixed charges, moving city-wide cleaning back into rates, steeper step tariffs above 10.5kl and expanded rates relief. Expenditure items were not reopened.",
+      "dates": {
+        "open": "2026-05-27",
+        "close": "2026-06-10"
+      },
+      "department": "Finance (Budgets)",
+      "area": "City-wide",
+      "theme": "basic_services",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-city-s-amended-draft-budget-for-2026-2027",
+      "other_urls": [
+        "https://www.ewn.co.za/2026/05/22/cape-town-amends-budget-after-high-court-rules-tariff-model-unlawful"
+      ]
+    },
+    {
+      "title": "Comment on the 2025/26 mid-year adjustments to the 2022-27 Integrated Development Plan (IDP)",
+      "summary": "Proposed mid-year changes to the five-year IDP corporate scorecard (indicators and targets) flowing from the 2025/26 mid-year budget and performance review, published for public comment.",
+      "dates": {
+        "open": "2026-02-06",
+        "close": "2026-03-27"
+      },
+      "department": "IDP / Office of the City Manager (unit uncertain)",
+      "area": "City-wide",
+      "theme": "capable_government",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-2025-26-mid-year-adjustments-to-the-2022-27-integrated-development-plan-idp",
+      "other_urls": []
+    },
+    {
+      "title": "Process plan for drafting the New Term of Office IDP (2027-2032)",
+      "summary": "Notice of the process the City intends to follow to draft the five-year IDP for the council elected on 4 November 2026. The approved IDP & Budget time-schedule foresees community inputs from November 2026, a draft IDP tabled for comment Feb-Apr 2027 and adoption with the 2027/28 budget.",
+      "dates": {
+        "open": "2026-09-25",
+        "close": "2026-10-25"
+      },
+      "department": "IDP / Office of the City Manager (unit uncertain)",
+      "area": "City-wide",
+      "theme": "capable_government",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed (next phase: IDP drafting Nov 2026-Mar 2027)",
+      "url": "https://capetown.govocal.com/en-GB/projects/intention-to-submit-a-process-outlining-the-drafting-of-the-new-term-of-office-integrated-development-plan-idp-2027-2032-amendment-to-council",
+      "other_urls": [
+        "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/City%20strategies,%20plans%20and%20frameworks/IDP-and-Budget-Time-Schedule_2026-27.pdf"
+      ]
+    },
+    {
+      "title": "Comment on the City's Draft Short-Term Letting By-law",
+      "summary": "Proposes a mandatory City registration number for short-term rental listings, data-sharing duties for booking platforms, and an evidence base for rating heavily let properties as commercial (reported as >50% of annual room-night capacity, from July 2027). Enforcement would include court interdicts; a compliance grace period would be announced by notice.",
+      "dates": {
+        "open": "2026-08-05",
+        "close": "2026-10-05"
+      },
+      "department": "Finance (Property Rates) - uncertain",
+      "area": "City-wide (most relevant to Atlantic Seaboard/CBD)",
+      "theme": "spatial_integration",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/draft-short-term-letting-by-law",
+      "other_urls": [
+        "https://www.capetown.gov.za/Media-and-news/Short-Term%20Letting%20By-Law%20open%20for%20public%20comment"
+      ]
+    },
+    {
+      "title": "Comment on the Draft Animal Keeping By-law, 2026",
+      "summary": "A revision of the 2021 by-law covering pet-owner duties, beekeeping, animal nuisances and complaints, impoundment, identification of dogs and leashing in public spaces outside designated off-leash areas. The draft drew strong public debate; the City stated it does not intend to introduce dog or cat licences.",
+      "dates": {
+        "open": "2026-08-28",
+        "close": "2026-09-29"
+      },
+      "department": "Safety and Security (Law Enforcement)",
+      "area": "City-wide",
+      "theme": "safety",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed (feedback phase)",
+      "url": "https://capetown.govocal.com/en-GB/projects/template-public-participation-campaign-copy-1",
+      "other_urls": [
+        "https://web1.capetown.gov.za/web1/newsandnotices/Home/Release/Comment-on-the-City-s-draft-Animal-Keeping-By-law"
+      ]
+    },
+    {
+      "title": "Proposed Amendments to the City of Cape Town Municipal Planning By-law, 2015",
+      "summary": "Amendments to the by-law that regulates land use and development applications across Cape Town, published for a short comment window in July 2026.",
+      "dates": {
+        "open": "2026-07-03",
+        "close": "2026-07-22"
+      },
+      "department": "Spatial Planning and Environment",
+      "area": "City-wide",
+      "theme": "spatial_integration",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/proposed-amendments-to-the-city-of-cape-town-municipal-planning-by-law-2015",
+      "other_urls": []
+    },
+    {
+      "title": "Comprehensive Integrated Transport Plan (CITP) 2026 update",
+      "summary": "Second annual update to the CITP 2023-2028, reportedly incorporating the Integrated Public Transport Network Plan 2040 and rail projects. Comments could be emailed (reference CITP 2026) or submitted at libraries, subcouncil offices or the Civic Centre Public Participation Unit.",
+      "dates": {
+        "open": "2026-09-01",
+        "close": "2026-09-30"
+      },
+      "department": "Urban Mobility",
+      "area": "City-wide",
+      "theme": "transport",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-comprehensive-integrated-transport-plan-2026-update",
+      "other_urls": [
+        "https://capechamber.co.za/latest-news/public-comment-opens-cape-towns-2026-transport-plan-update"
+      ]
+    },
+    {
+      "title": "Draft Road Safety Strategy (RSS)",
+      "summary": "Urban Mobility's strategy to reduce road crashes, prioritising pedestrians, cyclists, scholars and public transport users; it drew on a 2023 call for ideas with 3,000+ comments. Council approved the updated strategy in August 2026.",
+      "dates": {
+        "open": "2026-05-08",
+        "close": "2026-06-08"
+      },
+      "department": "Urban Mobility",
+      "area": "City-wide",
+      "theme": "transport",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed; approved Aug 2026",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-of-the-draft-road-safety-strategy-rss",
+      "other_urls": [
+        "https://web1.capetown.gov.za/web1/newsandnotices/Home/Release/City-Council-approves-Road-Safety-Strategy-for-Cape-Town"
+      ]
+    },
+    {
+      "title": "Draft CTMPD Police Plan 2026/2027",
+      "summary": "The Cape Town Metropolitan Police Department's annual policing plan, published for public comment before finalisation for the 2026/27 financial year.",
+      "dates": {
+        "open": "2026-05-25",
+        "close": "2026-06-29"
+      },
+      "department": "Safety and Security (Metro Police)",
+      "area": "City-wide",
+      "theme": "safety",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/draft-ctmpd-police-plan-2026-2027",
+      "other_urls": []
+    },
+    {
+      "title": "Draft Heritage Resources Management Strategy",
+      "summary": "A revision of the City's 2005 heritage strategy that aims to integrate heritage management into planning, align conservation with sustainable development and cut red tape. Summaries were published in English, Afrikaans and isiXhosa and a virtual information session was held on 27 August 2026.",
+      "dates": {
+        "open": "2026-08-17",
+        "close": "2026-09-17"
+      },
+      "department": "Spatial Planning and Environment (Environmental & Heritage Management)",
+      "area": "City-wide",
+      "theme": "public_space_environment",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-draft-heritage-resource-management-strategy-for-the-city-of-cape-town",
+      "other_urls": [
+        "https://web1.capetown.gov.za/web1/newsandnotices/Home/Release/Comment-on-the-City-s-draft-Heritage-Resources-Management-Strategy"
+      ]
+    },
+    {
+      "title": "Local Spatial Development Framework (LSDF) for Kensington/Factreton/Wingfield",
+      "summary": "A local spatial plan for Kensington, Factreton, Wingfield, Acacia Park and parts of Thornton along the Voortrekker Road Corridor, responding to informal settlement growth, land invasions, congestion and infrastructure pressure.",
+      "dates": {
+        "open": "2026-09-01",
+        "close": "2026-11-01"
+      },
+      "department": "Spatial Planning and Environment",
+      "area": "Subcouncil 3 (Kensington, Factreton, Wingfield)",
+      "theme": "spatial_integration",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed (just closed)",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-local-spatial-development-framework-lsdf-for-kensington-factreton-wingfield-area",
+      "other_urls": [
+        "https://www.capetown.gov.za/Media-and-news/Call%20on%20residents%20to%20help%20craft%20a%20spatial%20vision%20for%20Kensington%20and%20Factreton%20areas"
+      ]
+    },
+    {
+      "title": "Draft Big Bay Local Spatial Development Framework (LSDF)",
+      "summary": "A local spatial framework for the fast-growing Big Bay / Blouberg area on the West Coast, published for comment in late 2025.",
+      "dates": {
+        "open": "2025-10-03",
+        "close": "2025-12-13"
+      },
+      "department": "Spatial Planning and Environment",
+      "area": "Subcouncils 1 and 3 (Big Bay, Blouberg)",
+      "theme": "spatial_integration",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-draft-big-bay-local-spatial-development-framework-lsdf",
+      "other_urls": []
+    },
+    {
+      "title": "Review of the Draft Combined Rules for Ward Committees",
+      "summary": "The City's review of the rules governing how ward committees are elected and operate, ahead of establishing new ward committees after the November 2026 election. Civil society groups called for a more co-creative process than a 30-day comment window.",
+      "dates": {
+        "open": "2026-10-01",
+        "close": "2026-10-31"
+      },
+      "department": "Corporate Services / Public Participation (unit uncertain)",
+      "area": "City-wide (all wards)",
+      "theme": "capable_government",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed (just closed)",
+      "url": "https://capetown.govocal.com/en-GB/projects/Comment-on-The-Review-of-the-Draft-combined-rules-for-Ward-Commitees",
+      "other_urls": [
+        "https://allafrica.com/stories/202605050100.html"
+      ]
+    },
+    {
+      "title": "Proposed Informal Trading Plan for Thembokwezi Market",
+      "summary": "A proposed plan setting out informal trading bays and rules for the Thembokwezi Market area in Khayelitsha (a follow-up to a draft circulated in March 2026).",
+      "dates": {
+        "open": "2026-10-29",
+        "close": "2026-11-29"
+      },
+      "department": "Economic Growth (Informal Trading)",
+      "area": "Subcouncil 9 (Khayelitsha)",
+      "theme": "economic_growth",
+      "type": "comment",
+      "status_as_of_2026_11_05": "OPEN",
+      "url": "https://capetown.govocal.com/en-GB/projects/proposed-informal-trading-plan-for-thembokwezi-market",
+      "other_urls": []
+    },
+    {
+      "title": "Proposed closure of lanes/walkways in Ward 12, Belhar",
+      "summary": "A proposal to close specific pedestrian lanes/walkways in Belhar; such closures are typically motivated by crime and dumping concerns and require public notice.",
+      "dates": {
+        "open": "2026-11-02",
+        "close": "2026-12-02"
+      },
+      "department": "Urban Mobility / Property Management (uncertain)",
+      "area": "Ward 12, Subcouncil 5 (Belhar)",
+      "theme": "safety",
+      "type": "comment",
+      "status_as_of_2026_11_05": "OPEN",
+      "url": "https://capetown.govocal.com/en-GB/projects/proposed-closure-of-lanes-walkaways-in-ward-12-belhar",
+      "other_urls": []
+    },
+    {
+      "title": "Bo-Kaap Bin Survey and Waste Management Education",
+      "summary": "A survey of Bo-Kaap households about refuse bins and collection, paired with waste-management education.",
+      "dates": {
+        "open": "2026-10-08",
+        "close": "2026-10-28"
+      },
+      "department": "Urban Waste Management",
+      "area": "Subcouncil 16 (Bo-Kaap)",
+      "theme": "basic_services",
+      "type": "survey",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/bo-kaap-bin-survey-and-waste-management-education",
+      "other_urls": []
+    },
+    {
+      "title": "Proposed temporary MyCiTi bus stops in Wynberg",
+      "summary": "Temporary MyCiTi stops in Wynberg, linked to the MyCiTi Phase 2A (Metro South-East) construction programme.",
+      "dates": {
+        "open": "2026-02-27",
+        "close": "2026-03-31"
+      },
+      "department": "Urban Mobility (MyCiTi)",
+      "area": "Subcouncil 20 (Wynberg)",
+      "theme": "transport",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-proposed-temporary-myciti-bus-stops-in-wynberg",
+      "other_urls": [
+        "https://myciti.org.za/en/phase2a"
+      ]
+    },
+    {
+      "title": "Draft contract relating to water reuse projects",
+      "summary": "Statutory notice (MFMA s33-type long-term contract) for water reuse projects that form part of the City's New Water Programme to diversify supply beyond dams.",
+      "dates": {
+        "open": "2026-02-13",
+        "close": "2026-02-24"
+      },
+      "department": "Water and Sanitation",
+      "area": "City-wide",
+      "theme": "resilience",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-draft-contract-relating-to-water-reuse-projects",
+      "other_urls": []
+    },
+    {
+      "title": "Contract amendment: managed aquifer recharge water treatment plant at Cape Flats Wastewater Treatment Works",
+      "summary": "Notice of an amendment to an existing contract for a plant that will treat water for recharging the Cape Flats Aquifer, part of the City's water-resilience programme.",
+      "dates": {
+        "open": "2026-10-30",
+        "close": "2026-11-09"
+      },
+      "department": "Water and Sanitation",
+      "area": "Cape Flats (Strandfontein area)",
+      "theme": "resilience",
+      "type": "comment",
+      "status_as_of_2026_11_05": "OPEN",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-amendment-of-an-existing-contract-relating-to-the-new-managed-aquifer-recharge-water-treatment-plant-at-the-cape-flats-wastewater-treatment-works",
+      "other_urls": []
+    },
+    {
+      "title": "Draft Burial, Cremation and Cemeteries Management Policy",
+      "summary": "A City policy on burial, cremation and cemetery management, published for public comment.",
+      "dates": {
+        "open": "2026-08-18",
+        "close": "2026-10-05"
+      },
+      "department": "Community Services and Health (Recreation & Parks)",
+      "area": "City-wide",
+      "theme": "public_space_environment",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-draft-burial-cremation-and-cemeteries-management-policy",
+      "other_urls": []
+    },
+    {
+      "title": "Proposed lease of City-owned properties for shelter purposes",
+      "summary": "Proposal to lease several City-owned properties to organisations for use as shelters for people living on the street.",
+      "dates": {
+        "open": "2026-02-02",
+        "close": "2026-03-03"
+      },
+      "department": "Community Services and Health / Property Management (uncertain)",
+      "area": "Multiple sites",
+      "theme": "housing",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-proposed-lease-of-various-city-owned-properties-for-shelter-purposes",
+      "other_urls": []
+    },
+    {
+      "title": "Call for business plans: Early Childhood Development centre in Bosasa (Ward 114)",
+      "summary": "Call for organisations to submit business plans to operate a City-built ECD centre in Bosasa (Mfuleni area).",
+      "dates": {
+        "open": "2026-05-18",
+        "close": "2026-06-18"
+      },
+      "department": "Community Services and Health",
+      "area": "Ward 114, Subcouncil 14",
+      "theme": "public_space_environment",
+      "type": "call_for_proposals",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/call-for-submission-of-business-plans-operation-of-an-early-childhood-development-ecd-centre-in-bosasa-ward-114",
+      "other_urls": []
+    },
+    {
+      "title": "Proposed vision for Rondebosch CBD Main Road",
+      "summary": "A proposed urban-design vision for the Main Road high street in Rondebosch, published for public comment.",
+      "dates": {
+        "open": "2026-05-28",
+        "close": "2026-06-25"
+      },
+      "department": "Spatial Planning and Environment / Urban Mobility (uncertain)",
+      "area": "Rondebosch (Subcouncil 20 area)",
+      "theme": "spatial_integration",
+      "type": "comment",
+      "status_as_of_2026_11_05": "closed",
+      "url": "https://capetown.govocal.com/en-GB/projects/comment-on-the-proposed-vision-for-rondebosch-cbd-main-road",
+      "other_urls": []
+    },
+    {
+      "title": "Resident Ideas",
+      "summary": "The City's always-open ideas board on its Go Vocal platform (177 ideas listed at time of research), a direct analogue to a Decidim proposals component.",
+      "dates": {
+        "open": "2025-07-01",
+        "close": null
+      },
+      "department": "City-wide (platform owner)",
+      "area": "City-wide",
+      "theme": "capable_government",
+      "type": "ideas",
+      "status_as_of_2026_11_05": "OPEN (continuous)",
+      "url": "https://capetown.govocal.com/en-GB/projects/resident-ideas",
+      "other_urls": []
+    }
+  ],
+  "budget": {
+    "financial_year": "2026/27",
+    "approval": {
+      "date": "2026-06-29",
+      "body": "Council (virtual special meeting)",
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Budget-2026-27_CoverReport.pdf"
+    },
+    "total_rand": {
+      "value": 87710000000,
+      "note": "City budget page figure R87,71bn; Cape Argus reports R87,79bn - small discrepancy",
+      "sources": [
+        "https://www.capetown.gov.za/Family%20and%20home/Meet-the-City/the-city-budget/the-citys-budget-2026-2027",
+        "https://capeargus.co.za/news/2026-07-01-opposition-parties-reject-city-of-cape-towns-r8779bn-budget/"
+      ]
+    },
+    "operating_rand": {
+      "value": 74620000000,
+      "source": "https://www.capetown.gov.za/Family%20and%20home/Meet-the-City/the-city-budget/the-citys-budget-2026-2027"
+    },
+    "capital_rand": {
+      "value": 13090000000,
+      "note": "Original 2026/27 capital budget; Mayor elsewhere cites ~R12bn-R13bn",
+      "source": "https://www.capetown.gov.za/Family%20and%20home/Meet-the-City/the-city-budget/the-citys-budget-2026-2027"
+    },
+    "capital_three_year_rand": {
+      "value": 40000000000,
+      "period": "2026/27-2028/29",
+      "source": "https://www.capetown.gov.za/Media-and-news/Cape%20Town%20tables%20R40%20billion%20basic%20infrastructure%20budget%20to%20improve%20services%20to%20all"
+    },
+    "draft_allocations_rand": {
+      "water_and_sanitation_3yr": 16700000000,
+      "electricity_grid_3yr": 6000000000,
+      "myciti_cape_flats_expansion": 3300000000,
+      "safety_and_security_2026_27": 6800000000,
+      "informal_settlements_and_housing": 3300000000,
+      "roads_and_stormwater": 3700000000,
+      "congestion_relief": 653000000,
+      "sports_facility_upgrades": 227000000,
+      "strandfontein_pavilion": 300000000,
+      "note": "Figures from the 31 March 2026 tabled draft; not re-verified against the adopted annexures.",
+      "source": "https://www.capetown.gov.za/Media-and-news/Cape%20Town%20tables%20R40%20billion%20basic%20infrastructure%20budget%20to%20improve%20services%20to%20all"
+    },
+    "draft_tariff_changes_pct": {
+      "property_rates_rate_in_rand": -10.2,
+      "water_and_sanitation": 4.5,
+      "refuse": 3.75,
+      "city_wide_cleaning": 3.75,
+      "electricity_avg": 6.67,
+      "note": "As tabled March 2026; water/sanitation/cleaning fixed-charge structure later amended after High Court ruling (May-June 2026).",
+      "source": "https://www.capetown.gov.za/Media-and-news/Cape%20Town%20tables%20R40%20billion%20basic%20infrastructure%20budget%20to%20improve%20services%20to%20all"
+    },
+    "ward_allocations": {
+      "total_rand": 116000000,
+      "per_ward_rand": 1000000,
+      "wards": 116,
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Budget-2026-27_Ann22.pdf",
+      "note": "Annexure 22 shows R1m per ward (subcouncil totals = wards x R1m; grand total R116m). Projects are proposed by ward councillors with ward committee input and supported by subcouncils."
+    },
+    "subcouncil_operating_allocations": {
+      "total_rand": 39900000,
+      "per_subcouncil_rand": 1995000,
+      "subcouncils": 20,
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Budget-2026-27_Ann24.pdf"
+    },
+    "crr_ward_allocations_funded_from_savings_rand": {
+      "value": 51701084,
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Budget-2026-27_CoverReport.pdf"
+    },
+    "relief_and_charitable_allocations_rand": {
+      "value": 22000000,
+      "source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Budget-2026-27_CoverReport.pdf"
+    },
+    "sample_ward_projects_2026_27": [
+      {
+        "ward": 23,
+        "subcouncil": 1,
+        "project": "Traffic calming - Ward 23",
+        "rand": 252850
+      },
+      {
+        "ward": 23,
+        "subcouncil": 1,
+        "project": "Beach Buddies - Ward 23",
+        "rand": 147150
+      },
+      {
+        "ward": 23,
+        "subcouncil": 1,
+        "project": "Communication network improvement - Melkbosstrand NW (NW = neighbourhood watch, inferred)",
+        "rand": 300000
+      },
+      {
+        "ward": 23,
+        "subcouncil": 1,
+        "project": "Wolwerivier informal trading zone - maintenance",
+        "rand": 100000
+      },
+      {
+        "ward": 8,
+        "subcouncil": 2,
+        "project": "Cox Park - upgrade",
+        "rand": 250000
+      },
+      {
+        "ward": 28,
+        "subcouncil": 4,
+        "project": "Elsies River Library - furniture",
+        "rand": 150000
+      },
+      {
+        "ward": 18,
+        "subcouncil": 9,
+        "project": "Site C Stadium - upgrade",
+        "rand": 50000
+      },
+      {
+        "ward": 39,
+        "subcouncil": 13,
+        "project": "Nyanga initiation site - development",
+        "rand": 100000
+      },
+      {
+        "ward": 14,
+        "subcouncil": 14,
+        "project": "Kuils River Library - digital literacy programme",
+        "rand": 50000
+      },
+      {
+        "ward": 66,
+        "subcouncil": 18,
+        "project": "Ottery Library - outreach programme",
+        "rand": 65000
+      },
+      {
+        "ward": 74,
+        "subcouncil": 20,
+        "project": "Hout Bay Common - upgrade",
+        "rand": 160000
+      },
+      {
+        "ward": 44,
+        "subcouncil": 11,
+        "project": "CCTV/LPR cameras - Ward 44",
+        "rand": 80000
+      }
+    ],
+    "sample_projects_note": "Amounts are the 'Proposed Budget 2026/27' column as extracted from a PDF table; ward attribution inferred from table position. Verify before quoting as fact.",
+    "sample_projects_source": "https://www.capetown.gov.za/_documents/resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Budget-2026-27_Ann22.pdf"
+  },
+  "datasets": {
+    "wards_feature_service": "https://esapqa.capetown.gov.za/agsext/rest/services/Theme_Based/ODP_SPLIT_5/FeatureServer/6",
+    "wards_geojson_query": "https://esapqa.capetown.gov.za/agsext/rest/services/Theme_Based/ODP_SPLIT_5/FeatureServer/6/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "wards_item_page": "https://odp-cctegis.opendata.arcgis.com/datasets/358f42b351c2451f89e2b38dd6f2668f",
+    "subcouncils_feature_service": "https://esapqa.capetown.gov.za/agsext/rest/services/Theme_Based/ODP_SPLIT_5/FeatureServer/5",
+    "official_planning_suburbs_feature_service": "https://esapqa.capetown.gov.za/agsext/rest/services/Theme_Based/ODP_SPLIT_5/FeatureServer/3",
+    "terms_of_use": "https://www.capetown.gov.za/General/Terms-of-use-open-data"
+  }
+}
