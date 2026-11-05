@@ -41,6 +41,7 @@ services:
       - ./db:/app/db
       - ./lib:/app/lib
       - ./spec:/app/spec
+      - ./script:/app/script
       - ./.rspec:/app/.rspec
     depends_on:
       db:
