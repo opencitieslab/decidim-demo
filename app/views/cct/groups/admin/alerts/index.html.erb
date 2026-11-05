@@ -1,0 +1,45 @@
+<% add_decidim_page_title(t("cct.groups.admin.alerts.index.title")) %>
+
+<div class="card" id="cct-group-alerts">
+  <div class="item_show__header">
+    <h1 class="item_show__header-title">
+      <%= t("cct.groups.admin.alerts.index.title") %>
+      <% if allowed_to? :create, :cct_group_alert %>
+        <%= link_to t("cct.groups.admin.alerts.index.new"), new_alert_path, class: "button button__sm button__secondary new" %>
+      <% end %>
+      <%= link_to t("cct.groups.admin.members.index.back"), groups_path, class: "button button__sm button__transparent-secondary" %>
+    </h1>
+  </div>
+
+  <% if alerts.empty? %>
+    <p><%= t("cct.groups.admin.alerts.index.empty") %></p>
+  <% else %>
+    <div class="table-stacked">
+      <table class="table-list">
+        <thead>
+          <tr>
+            <th><%= t("cct.groups.admin.alerts.index.sent_at") %></th>
+            <th><%= t("activemodel.attributes.cct_group_alert.group_id") %></th>
+            <th><%= t("activemodel.attributes.cct_group_alert.space") %></th>
+            <th><%= t("activemodel.attributes.cct_group_alert.message") %></th>
+            <th><%= t("cct.groups.admin.alerts.index.recipients") %></th>
+            <th><%= t("cct.groups.admin.alerts.index.sent_by") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% alerts.each do |alert| %>
+            <tr>
+              <td><%= l(alert.created_at, format: :decidim_short) %></td>
+              <td><%= alert.group ? group_name(alert.group) : t("cct.groups.admin.alerts.index.deleted_group") %></td>
+              <td><%= translated_attribute(alert.participatory_space&.title) %></td>
+              <td><%= alert.message.to_s.truncate(120) %></td>
+              <td><%= alert.recipients_count %></td>
+              <td><%= alert.author&.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <%= decidim_paginate alerts %>
+  <% end %>
+</div>

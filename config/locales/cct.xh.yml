@@ -5,20 +5,162 @@ xh:
     name_with_error: isiXhosa (impazamo!)
   activemodel:
     attributes:
+      cct_group:
+        description: Inkcazelo
+        name: Igama
+        slug: Isichongi (slug)
+      cct_group_alert:
+        group_id: Iqela
+        message: Umyalezo
+        space: Indawo yokuthatha inxaxheba
+      cct_group_member:
+        email: I-imeyile yomthathi-nxaxheba
       user:
         phone: Inombolo yeselfowuni
         surname: Ifani
         ward: Iwadi
     errors:
       models:
+        cct_group_member:
+          attributes:
+            email:
+              not_found_in_organization: ayingowomthathi-nxaxheba wale ntlangano
         user:
           attributes:
             phone:
               invalid_sa_mobile: ayiyonombolo yeselfowuni yaseMzantsi Afrika (umzekelo 082 123 4567)
             ward:
               inclusion: ayiyowadi yeSixeko saseKapa
+  activerecord:
+    errors:
+      messages:
+        immutable: ayinakutshintshwa
   cct:
     demo_label: Umboniso
+    groups:
+      admin:
+        alerts:
+          create:
+            already_sent: Esi saziso sele sithunyelwe; asithunyelwanga kwakhona.
+            error: Isaziso asikwazanga ukuthunyelwa. Jonga ifomu.
+            success:
+              one: Isaziso sithunyelwe kwilungu eli-1.
+              other: Isaziso sithunyelwe kumalungu ali-%{count}.
+          index:
+            deleted_group: (iqela elicinyiweyo)
+            empty: Akukathunyelwa zaziso okwangoku.
+            new: Yazisa iqela
+            recipients: Abamkeli
+            sent_at: Ithunyelwe
+            sent_by: Ithunyelwe ngu
+            title: Izaziso zamaqela
+          new:
+            confirm: Thumela esi saziso ngoku kulo lonke ilungu leqela elikhethiweyo?
+            help: Ilungu ngalinye leqela lifumana isaziso (kunye ne-imeyile, kuxhomekeke kwiisetingi zalo zezaziso) elimmemela kwindawo yokuthatha inxaxheba ekhethiweyo. Akukho mntu wumbi waziswayo.
+            message_help: Akunyanzelekanga, umbhalo oqhelekileyo, ukuya kuthi ga kwiimpawu ezi-%{count}.
+            send: Thumela isaziso
+            space_help: Kudweliswa kuphela iindawo ezipapashiweyo.
+            title: Yazisa iqela
+          space_types:
+            assemblies: Iindibano
+            participatory_processes: Iinkqubo
+        groups:
+          create:
+            error: Kubekho ingxaki ekwenzeni iqela.
+            success: Iqela lenziwe. Ngoku yongeza amalungu alo.
+          destroy:
+            success: Iqela licinyiwe. Iimvume zamalungu alo angaphambili zihlaziyiwe.
+          edit:
+            title: Hlela iqela
+            update: Hlaziya iqela
+          form:
+            slug_help: Oonobumba abancinci, amanani kunye nezihlanganisi, umzekelo ward-23-ward-committee. Sisetyenziswa kwiisetingi zeeMvume; asinakutshintshwa kamva.
+          index:
+            alert: Yazisa iqela
+            alert_group: Yazisa eli qela
+            alerts: Izaziso ezithunyelweyo
+            confirm_destroy: Cima iqela elithi "%{name}"? Amalungu alo aya kuphulukana nemvume ebewayinikwa lilo.
+            empty: Akukabikho maqela okwangoku.
+            help: Amaqela alawulwa ngabalawuli. Thintela isenzo (ukuphakamisa, ukuvota, ukunika izimvo, ukuphendula uphando) kumaqela athile kwiiMvume zecandelo, usebenzisa ugunyaziso oluthi "Ilungu leqela" kunye nezichongi zamaqela.
+            manage_members: Lawula amalungu
+            members: Amalungu
+            new: Iqela elitsha
+            title: Amaqela abathathi-nxaxheba
+          new:
+            create: Yenza iqela
+            title: Iqela elitsha
+          update:
+            error: Kubekho ingxaki ekuhlaziyeni iqela.
+            success: Iqela lihlaziyiwe.
+        members:
+          create:
+            already_member: Lo mthathi-nxaxheba sele elilungu leqela.
+            error: Ilungu alikwazanga ukongezwa.
+            success: Ilungu longeziwe.
+          destroy:
+            success: Ilungu lisusiwe.
+          index:
+            add: Yongeza ilungu
+            add_help: I-imeyile yomthathi-nxaxheba obhalisiweyo wale ntlangano.
+            add_title: Yongeza ilungu
+            back: Buyela kumaqela
+            confirm_remove: Susa u-%{name} kweli qela?
+            email: I-imeyile
+            empty: Eli qela alikabi namalungu.
+            import: Ngenisa
+            import_file: Ifayile ye-CSV
+            import_help: I-imeyile enye kumqolo ngamnye kwikholamu yokuqala (umqolo wesihloko othi "email" awunyanzelekanga), ubuninzi bemiqolo eyi-%{rows}. Kongezwa kuphela abathathi-nxaxheba ababhalisiweyo bale ntlangano; abanye badweliswa kwingxelo.
+            import_title: Ngenisa amalungu kwifayile ye-CSV
+            list_title:
+              one: Ilungu eli-1
+              other: Amalungu ali-%{count}
+            name: Igama
+            nickname: Igama lesiteketiso
+            remove: Susa eqeleni
+            since: Ilungu ukusukela
+            slug_help: 'Ukuthintela isenzo kweli qela, sebenzisa esi sichongi kwiisetingi zeeMvume:'
+            title: Amalungu e-%{name}
+        members_imports:
+          errors:
+            malformed: Ifayile ayikwazanga ukufundwa njenge-CSV ye-UTF-8.
+            missing_file: Khetha ifayile ye-CSV ukuze uyingenise.
+            too_large: Ifayile inkulu kakhulu (ubuninzi yi-%{size} KB).
+          show:
+            added:
+              one: Umthathi-nxaxheba o-1 wongeziwe.
+              other: Abathathi-nxaxheba abali-%{count} bongeziwe.
+            already_members:
+              one: Umthathi-nxaxheba o-1 ebesele elilungu.
+              other: Abathathi-nxaxheba abali-%{count} bebesele bengamalungu.
+            back: Buyela kumalungu
+            line: Umqolo
+            reason: Isizathu
+            reasons:
+              invalid_email: Ayiyondlela ye-imeyile esebenzayo
+              not_found: Akukho mthathi-nxaxheba une-imeyile le kule ntlangano
+            rejected:
+              one: Umqolo o-1 waliwe.
+              other: Imiqolo eli-%{count} yaliwe.
+            rejected_title: Imiqolo eyaliweyo
+            title: Ukungenisa ku-%{name}
+            truncated: Kufundwe kuphela imiqolo yokuqala eli-%{rows}.
+            value: Ixabiso
+        menu: Amaqela
+      admin_log:
+        add_member: '%{user_name} wongeze u-%{member_name} kwiqela labathathi-nxaxheba %{resource_name}'
+        alert: '%{user_name} wazise amalungu ali-%{recipients_count} eqela labathathi-nxaxheba %{resource_name} nge-%{space_title}'
+        create: '%{user_name} wenze iqela labathathi-nxaxheba %{resource_name}'
+        delete: '%{user_name} ucime iqela labathathi-nxaxheba %{resource_name}'
+        import_members: '%{user_name} ungenise amalungu ali-%{added_count} kwiqela labathathi-nxaxheba %{resource_name} (imiqolo eli-%{rejected_count} yaliwe)'
+        remove_member: '%{user_name} ususe u-%{member_name} kwiqela labathathi-nxaxheba %{resource_name}'
+        update: '%{user_name} uhlaziye iqela labathathi-nxaxheba %{resource_name}'
+      authorizer:
+        restricted:
+          one: 'Esi senzo sivulelekile kuphela kumalungu eqela %{groups}. Ubulungu beqela bulawulwa ngabalawuli: cela umlawuli ukuba akongeze eqeleni.'
+          other: 'Esi senzo sivulelekile kuphela kumalungu amaqela %{groups}. Ubulungu beqela bulawulwa ngabalawuli: cela umlawuli ukuba akongeze eqeleni.'
+        restricted_any_group: 'Esi senzo sivulelekile kuphela kumalungu amaqela abathathi-nxaxheba. Ubulungu beqela bulawulwa ngabalawuli: cela umlawuli ukuba akongeze eqeleni.'
+      member:
+        ask_admin: Ubulungu beqela bulawulwa ngabalawuli. Cela umlawuli ukuba akongeze eqeleni.
     resident_fields:
       phone_help: Ayinyanzelekanga. Inombolo yeselfowuni yaseMzantsi Afrika. Igcinwa iyimfihlo kwaye asithumeli SMS.
       surname_help: Ayinyanzelekanga. Igcinwa iyimfihlo kwaye ayiboniswa kwiprofayile yakho yoluntu okanye ecaleni kwegalelo lakho.
@@ -38,6 +180,13 @@ xh:
       option: Iwadi %{number} — iBhungana %{subcouncil} (%{area})
   decidim:
     authorization_handlers:
+      cct_group_membership:
+        explanation: Ubulungu beqela labathathi-nxaxheba, obulawulwa ngabalawuli. Ezinye izenzo zivulelekile kuphela kumalungu amaqela athile.
+        fields:
+          allowed_groups: Amaqela avumelekileyo
+          allowed_groups_help: Izichongi zamaqela (slugs) ezahlulwe ngeekoma, umzekelo ward-23-ward-committee. Yishiye ingenanto ukuvumela amalungu alo naliphi na iqela.
+          groups: Amaqela
+        name: Ilungu leqela
       cct_ward_resident:
         explanation: Iwadi ohlala kuyo, njengoko imiselwe kwiakhawunti yakho. Ezinye izenzo zivulelekile kuphela kubahlali beewadi ezithile.
         fields:
@@ -57,3 +206,10 @@ xh:
           phone_e164: Inombolo yakho yeselfowuni, ngohlobo lwamazwe ngamazwe
           surname: Ifani yakho
           ward: Iwadi othe uhlala kuyo
+    events:
+      cct:
+        group_alert:
+          email_intro: Njengelungu le-%{group_name}, uyamenywa ukuba uthathe inxaxheba ku-"%{resource_title}".
+          email_outro: Ufumene esi saziso kuba umlawuli wazise amalungu e-%{group_name}.
+          email_subject: Isimemo esitsha samalungu e-%{group_name}
+          notification_title: Njengelungu le-%{group_name}, uyamenywa ukuba uthathe inxaxheba ku-<a href="%{resource_path}">%{resource_title}</a>.

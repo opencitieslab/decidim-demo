@@ -1,0 +1,14 @@
+<% add_decidim_page_title(t("cct.groups.admin.groups.new.title")) %>
+<div class="item_show__header">
+  <h1 class="item_show__header-title"><%= t("cct.groups.admin.groups.new.title") %></h1>
+</div>
+<div class="item__edit-form">
+  <%= decidim_form_for(@form, url: groups_path, method: :post, html: { class: "form-defaults form new_cct_group" }) do |f| %>
+    <%= render partial: "form", object: f %>
+    <div class="item__edit-sticky">
+      <div class="item__edit-sticky-container">
+        <%= f.submit t("cct.groups.admin.groups.new.create"), class: "button button__sm button__secondary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,37 @@
+<% add_decidim_page_title(t("cct.groups.admin.alerts.new.title")) %>
+<div class="item_show__header">
+  <h1 class="item_show__header-title"><%= t("cct.groups.admin.alerts.new.title") %></h1>
+</div>
+<div class="item__edit-form">
+  <%= decidim_form_for(@form, url: alerts_path, method: :post, html: { class: "form-defaults form new_cct_group_alert" }) do |f| %>
+    <div class="form__wrapper">
+      <div class="card pt-4">
+        <div class="card-section">
+          <p class="help-text"><%= t("cct.groups.admin.alerts.new.help") %></p>
+          <div class="row column">
+            <%= f.select :group_id, groups.order(:slug).map { |group| [group_name(group), group.id] }, { include_blank: true } %>
+          </div>
+          <div class="row column">
+            <% space_groups = space_options.map do |manifest, spaces|
+                 [t("cct.groups.admin.alerts.space_types.#{manifest.name}", default: manifest.name.to_s.humanize),
+                  spaces.map { |space| [translated_attribute(space.title), Cct::Groups::Admin::AlertForm.space_value(space)] }]
+               end %>
+            <%= f.select :space, grouped_options_for_select(space_groups, @form.space),
+                         { include_blank: true, help_text: t("cct.groups.admin.alerts.new.space_help") } %>
+          </div>
+          <div class="row column">
+            <%= f.text_area :message, rows: 4, maxlength: Cct::Groups::Alert::MESSAGE_MAX_LENGTH,
+                                      help_text: t("cct.groups.admin.alerts.new.message_help", count: Cct::Groups::Alert::MESSAGE_MAX_LENGTH) %>
+          </div>
+          <%= f.hidden_field :token %>
+        </div>
+      </div>
+    </div>
+    <div class="item__edit-sticky">
+      <div class="item__edit-sticky-container">
+        <%= f.submit t("cct.groups.admin.alerts.new.send"), class: "button button__sm button__secondary",
+                                                           data: { confirm: t("cct.groups.admin.alerts.new.confirm") } %>
+      </div>
+    </div>
+  <% end %>
+</div>

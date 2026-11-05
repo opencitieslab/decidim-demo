@@ -1,0 +1,83 @@
+<% add_decidim_page_title(t("cct.groups.admin.members.index.title", name: group_name(group))) %>
+
+<div class="card" id="cct-group-members">
+  <div class="item_show__header">
+    <h1 class="item_show__header-title">
+      <%= t("cct.groups.admin.members.index.title", name: group_name(group)) %>
+      <%= link_to t("cct.groups.admin.members.index.back"), groups_path, class: "button button__sm button__transparent-secondary" %>
+      <% if allowed_to? :create, :cct_group_alert %>
+        <%= link_to t("cct.groups.admin.groups.index.alert_group"), new_alert_path(group_id: group.id), class: "button button__sm button__secondary" %>
+      <% end %>
+    </h1>
+  </div>
+
+  <p class="help-text">
+    <%= t("cct.groups.admin.members.index.slug_help") %> <code><%= group.slug %></code>
+  </p>
+
+  <% if allowed_to? :create, :cct_group_member, group: group %>
+    <div class="card-section">
+      <h2 class="h4"><%= t("cct.groups.admin.members.index.add_title") %></h2>
+      <%= decidim_form_for(@form, url: group_members_path(group), method: :post, html: { class: "form-defaults form new_cct_group_member" }) do |f| %>
+        <div class="row column">
+          <%= f.email_field :email, help_text: t("cct.groups.admin.members.index.add_help") %>
+        </div>
+        <%= f.submit t("cct.groups.admin.members.index.add"), class: "button button__sm button__secondary" %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if allowed_to? :import, :cct_group_member, group: group %>
+    <div class="card-section">
+      <h2 class="h4"><%= t("cct.groups.admin.members.index.import_title") %></h2>
+      <%= form_tag group_members_import_path(group), multipart: true, class: "form-defaults form", id: "cct-group-members-import" do %>
+        <p class="help-text"><%= t("cct.groups.admin.members.index.import_help", rows: Cct::Groups::Admin::ImportMembersCsv::MAX_ROWS) %></p>
+        <%= label_tag :file, t("cct.groups.admin.members.index.import_file") %>
+        <%= file_field_tag :file, accept: ".csv,text/csv", required: true %>
+        <%= submit_tag t("cct.groups.admin.members.index.import"), class: "button button__sm button__secondary" %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="card-section">
+    <h2 class="h4"><%= t("cct.groups.admin.members.index.list_title", count: members.total_count) %></h2>
+    <% if members.empty? %>
+      <p><%= t("cct.groups.admin.members.index.empty") %></p>
+    <% else %>
+      <div class="table-stacked">
+        <table class="table-list">
+          <thead>
+            <tr>
+              <th><%= t("cct.groups.admin.members.index.name") %></th>
+              <th><%= t("cct.groups.admin.members.index.nickname") %></th>
+              <th><%= t("cct.groups.admin.members.index.email") %></th>
+              <th><%= t("cct.groups.admin.members.index.since") %></th>
+              <th><%= t("decidim.admin.actions.actions") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% members.each do |membership| %>
+              <tr data-membership-id="<%= membership.id %>">
+                <td data-label="<%= t("cct.groups.admin.members.index.name") %>"><%= membership.user.name %></td>
+                <td data-label="<%= t("cct.groups.admin.members.index.nickname") %>"><%= membership.user.nickname %></td>
+                <td data-label="<%= t("cct.groups.admin.members.index.email") %>"><%= membership.user.email %></td>
+                <td data-label="<%= t("cct.groups.admin.members.index.since") %>"><%= l(membership.created_at, format: :decidim_short) %></td>
+                <td class="table-list__actions" data-label="<%= t("decidim.admin.actions.actions") %>">
+                  <% if allowed_to? :destroy, :cct_group_member, group: group, membership: membership %>
+                    <%= button_to group_member_path(group, membership), method: :delete, class: "action-icon action-icon--remove",
+                                  title: t("cct.groups.admin.members.index.remove"),
+                                  data: { confirm: t("cct.groups.admin.members.index.confirm_remove", name: membership.user.name) } do %>
+                      <%= icon "delete-bin-line" %>
+                      <span class="sr-only"><%= t("cct.groups.admin.members.index.remove") %></span>
+                    <% end %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <%= decidim_paginate members %>
+    <% end %>
+  </div>
+</div>

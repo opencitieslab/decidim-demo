@@ -5,20 +5,162 @@ en:
     name_with_error: English (error!)
   activemodel:
     attributes:
+      cct_group:
+        description: Description
+        name: Name
+        slug: Identifier (slug)
+      cct_group_alert:
+        group_id: Group
+        message: Message
+        space: Participatory space
+      cct_group_member:
+        email: Participant's email
       user:
         phone: Mobile number
         surname: Surname
         ward: Ward
     errors:
       models:
+        cct_group_member:
+          attributes:
+            email:
+              not_found_in_organization: does not belong to a participant of this organization
         user:
           attributes:
             phone:
               invalid_sa_mobile: is not a South African mobile number (for example 082 123 4567)
             ward:
               inclusion: is not a City of Cape Town ward
+  activerecord:
+    errors:
+      messages:
+        immutable: cannot be changed
   cct:
     demo_label: Demo
+    groups:
+      admin:
+        alerts:
+          create:
+            already_sent: This alert was already sent; it was not sent again.
+            error: The alert could not be sent. Check the form.
+            success:
+              one: Alert sent to 1 member.
+              other: Alert sent to %{count} members.
+          index:
+            deleted_group: (deleted group)
+            empty: No alerts have been sent yet.
+            new: Alert a group
+            recipients: Recipients
+            sent_at: Sent
+            sent_by: Sent by
+            title: Group alerts
+          new:
+            confirm: Send this alert to every member of the selected group now?
+            help: Every member of the group receives a notification (and an email, depending on their notification settings) inviting them to the chosen participatory space. Nobody else is notified.
+            message_help: Optional, plain text, up to %{count} characters.
+            send: Send alert
+            space_help: Only published spaces are listed.
+            title: Alert a group
+          space_types:
+            assemblies: Assemblies
+            participatory_processes: Processes
+        groups:
+          create:
+            error: There was a problem creating the group.
+            success: Group created. Now add its members.
+          destroy:
+            success: Group deleted. Its former members' access was updated.
+          edit:
+            title: Edit group
+            update: Update group
+          form:
+            slug_help: Lowercase letters, numbers and hyphens, for example ward-23-ward-committee. Used in the Permissions settings; it cannot be changed later.
+          index:
+            alert: Alert a group
+            alert_group: Alert this group
+            alerts: Sent alerts
+            confirm_destroy: Delete the group "%{name}"? Its members lose the access it gave them.
+            empty: There are no groups yet.
+            help: Groups are managed by administrators. Restrict an action (propose, vote, comment, answer a survey) to some groups in the component's Permissions, with the "Group member" authorization and the groups' identifiers.
+            manage_members: Manage members
+            members: Members
+            new: New group
+            title: Participant groups
+          new:
+            create: Create group
+            title: New group
+          update:
+            error: There was a problem updating the group.
+            success: Group updated.
+        members:
+          create:
+            already_member: This participant is already a member of the group.
+            error: The member could not be added.
+            success: Member added.
+          destroy:
+            success: Member removed.
+          index:
+            add: Add member
+            add_help: The email of a registered participant of this organization.
+            add_title: Add a member
+            back: Back to groups
+            confirm_remove: Remove %{name} from this group?
+            email: Email
+            empty: This group has no members yet.
+            import: Import
+            import_file: CSV file
+            import_help: One email per row in the first column (an "email" header row is optional), at most %{rows} rows. Only registered participants of this organization are added; the others are listed in a report.
+            import_title: Import members from a CSV file
+            list_title:
+              one: 1 member
+              other: '%{count} members'
+            name: Name
+            nickname: Nickname
+            remove: Remove from group
+            since: Member since
+            slug_help: 'To restrict an action to this group, use this identifier in the Permissions settings:'
+            title: Members of %{name}
+        members_imports:
+          errors:
+            malformed: The file could not be read as UTF-8 CSV.
+            missing_file: Choose a CSV file to import.
+            too_large: The file is too large (maximum %{size} KB).
+          show:
+            added:
+              one: 1 participant added.
+              other: '%{count} participants added.'
+            already_members:
+              one: 1 participant was already a member.
+              other: '%{count} participants were already members.'
+            back: Back to the members
+            line: Row
+            reason: Reason
+            reasons:
+              invalid_email: Not a valid email address
+              not_found: No participant with this email in this organization
+            rejected:
+              one: 1 row rejected.
+              other: '%{count} rows rejected.'
+            rejected_title: Rejected rows
+            title: Import into %{name}
+            truncated: Only the first %{rows} rows were read.
+            value: Value
+        menu: Groups
+      admin_log:
+        add_member: '%{user_name} added %{member_name} to the participant group %{resource_name}'
+        alert: '%{user_name} alerted the %{recipients_count} members of the participant group %{resource_name} about %{space_title}'
+        create: '%{user_name} created the participant group %{resource_name}'
+        delete: '%{user_name} deleted the participant group %{resource_name}'
+        import_members: '%{user_name} imported %{added_count} members into the participant group %{resource_name} (%{rejected_count} rows rejected)'
+        remove_member: '%{user_name} removed %{member_name} from the participant group %{resource_name}'
+        update: '%{user_name} updated the participant group %{resource_name}'
+      authorizer:
+        restricted:
+          one: 'This action is only open to members of the group %{groups}. Group membership is managed by the administrators: ask an administrator to add you to the group.'
+          other: 'This action is only open to members of the groups %{groups}. Group membership is managed by the administrators: ask an administrator to add you to the group.'
+        restricted_any_group: 'This action is only open to members of participant groups. Group membership is managed by the administrators: ask an administrator to add you to the group.'
+      member:
+        ask_admin: Group membership is managed by the administrators. Ask an administrator to add you to the group.
     resident_fields:
       phone_help: Optional. A South African mobile number. It is kept private and we do not send SMS.
       surname_help: Optional. It is kept private and never shown on your public profile or next to your contributions.
@@ -38,6 +180,13 @@ en:
       option: Ward %{number} — Subcouncil %{subcouncil} (%{area})
   decidim:
     authorization_handlers:
+      cct_group_membership:
+        explanation: Membership of a participant group, managed by the administrators. Some actions are open only to members of certain groups.
+        fields:
+          allowed_groups: Allowed groups
+          allowed_groups_help: Group identifiers (slugs) separated by commas, for example ward-23-ward-committee. Leave empty to allow members of any group.
+          groups: Groups
+        name: Group member
       cct_ward_resident:
         explanation: The ward you live in, as set in your account. Some actions are open only to residents of certain wards.
         fields:
@@ -57,3 +206,10 @@ en:
           phone_e164: Your mobile number, in international format
           surname: Your surname
           ward: The ward you declared you live in
+    events:
+      cct:
+        group_alert:
+          email_intro: As a member of %{group_name}, you are invited to take part in "%{resource_title}".
+          email_outro: You received this notification because an administrator alerted the members of %{group_name}.
+          email_subject: New invitation for the members of %{group_name}
+          notification_title: As a member of %{group_name}, you are invited to take part in <a href="%{resource_path}">%{resource_title}</a>.

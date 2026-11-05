@@ -1,0 +1,47 @@
+<% add_decidim_page_title(t("cct.groups.admin.members_imports.show.title", name: group_name(group))) %>
+
+<div class="card" id="cct-group-members-import-report">
+  <div class="item_show__header">
+    <h1 class="item_show__header-title">
+      <%= t("cct.groups.admin.members_imports.show.title", name: group_name(group)) %>
+      <%= link_to t("cct.groups.admin.members_imports.show.back"), group_members_path(group), class: "button button__sm button__secondary" %>
+    </h1>
+  </div>
+
+  <div class="card-section">
+    <ul>
+      <li><%= t("cct.groups.admin.members_imports.show.added", count: result.added.size) %></li>
+      <li><%= t("cct.groups.admin.members_imports.show.already_members", count: result.already_members.size) %></li>
+      <li><%= t("cct.groups.admin.members_imports.show.rejected", count: result.rejected.size) %></li>
+    </ul>
+    <% if result.truncated %>
+      <p class="flash warning"><%= t("cct.groups.admin.members_imports.show.truncated", rows: Cct::Groups::Admin::ImportMembersCsv::MAX_ROWS) %></p>
+    <% end %>
+  </div>
+
+  <% if result.rejected.any? %>
+    <div class="card-section">
+      <h2 class="h4"><%= t("cct.groups.admin.members_imports.show.rejected_title") %></h2>
+      <div class="table-stacked">
+        <table class="table-list" id="cct-group-members-import-rejected">
+          <thead>
+            <tr>
+              <th><%= t("cct.groups.admin.members_imports.show.line") %></th>
+              <th><%= t("cct.groups.admin.members_imports.show.value") %></th>
+              <th><%= t("cct.groups.admin.members_imports.show.reason") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% result.rejected.each do |rejection| %>
+              <tr>
+                <td><%= rejection.line %></td>
+                <td><code><%= rejection.value %></code></td>
+                <td><%= t("cct.groups.admin.members_imports.show.reasons.#{rejection.reason}") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</div>

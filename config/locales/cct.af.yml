@@ -5,20 +5,162 @@ af:
     name_with_error: Afrikaans (fout!)
   activemodel:
     attributes:
+      cct_group:
+        description: Beskrywing
+        name: Naam
+        slug: Identifiseerder (slug)
+      cct_group_alert:
+        group_id: Groep
+        message: Boodskap
+        space: Deelnameruimte
+      cct_group_member:
+        email: Deelnemer se e-pos
       user:
         phone: Selfoonnommer
         surname: Van
         ward: Wyk
     errors:
       models:
+        cct_group_member:
+          attributes:
+            email:
+              not_found_in_organization: behoort nie aan 'n deelnemer van hierdie organisasie nie
         user:
           attributes:
             phone:
               invalid_sa_mobile: is nie 'n Suid-Afrikaanse selfoonnommer nie (byvoorbeeld 082 123 4567)
             ward:
               inclusion: is nie 'n wyk van Stad Kaapstad nie
+  activerecord:
+    errors:
+      messages:
+        immutable: kan nie verander word nie
   cct:
     demo_label: Demonstrasie
+    groups:
+      admin:
+        alerts:
+          create:
+            already_sent: Hierdie kennisgewing is reeds gestuur; dit is nie weer gestuur nie.
+            error: Die kennisgewing kon nie gestuur word nie. Gaan die vorm na.
+            success:
+              one: Kennisgewing aan 1 lid gestuur.
+              other: Kennisgewing aan %{count} lede gestuur.
+          index:
+            deleted_group: (geskrapte groep)
+            empty: Nog geen kennisgewings is gestuur nie.
+            new: Stel 'n groep in kennis
+            recipients: Ontvangers
+            sent_at: Gestuur
+            sent_by: Gestuur deur
+            title: Groepkennisgewings
+          new:
+            confirm: Stuur hierdie kennisgewing nou aan elke lid van die gekose groep?
+            help: Elke lid van die groep ontvang 'n kennisgewing (en 'n e-pos, afhangend van hul kennisgewing-instellings) wat hulle na die gekose deelnameruimte nooi. Niemand anders word in kennis gestel nie.
+            message_help: Opsioneel, gewone teks, tot %{count} karakters.
+            send: Stuur kennisgewing
+            space_help: Slegs gepubliseerde ruimtes word gelys.
+            title: Stel 'n groep in kennis
+          space_types:
+            assemblies: Vergaderings
+            participatory_processes: Prosesse
+        groups:
+          create:
+            error: Daar was 'n probleem om die groep te skep.
+            success: Groep geskep. Voeg nou sy lede by.
+          destroy:
+            success: Groep geskrap. Sy voormalige lede se toegang is bygewerk.
+          edit:
+            title: Wysig groep
+            update: Werk groep by
+          form:
+            slug_help: Kleinletters, syfers en koppeltekens, byvoorbeeld ward-23-ward-committee. Word in die Toestemmings-instellings gebruik; dit kan nie later verander word nie.
+          index:
+            alert: Stel 'n groep in kennis
+            alert_group: Stel hierdie groep in kennis
+            alerts: Gestuurde kennisgewings
+            confirm_destroy: Skrap die groep "%{name}"? Sy lede verloor die toegang wat dit hulle gegee het.
+            empty: Daar is nog geen groepe nie.
+            help: Groepe word deur administrateurs bestuur. Beperk 'n aksie (voorstel, stem, kommentaar lewer, 'n opname beantwoord) tot sekere groepe in die komponent se Toestemmings, met die "Groeplid"-magtiging en die groepe se identifiseerders.
+            manage_members: Bestuur lede
+            members: Lede
+            new: Nuwe groep
+            title: Deelnemergroepe
+          new:
+            create: Skep groep
+            title: Nuwe groep
+          update:
+            error: Daar was 'n probleem om die groep by te werk.
+            success: Groep bygewerk.
+        members:
+          create:
+            already_member: Hierdie deelnemer is reeds 'n lid van die groep.
+            error: Die lid kon nie bygevoeg word nie.
+            success: Lid bygevoeg.
+          destroy:
+            success: Lid verwyder.
+          index:
+            add: Voeg lid by
+            add_help: Die e-pos van 'n geregistreerde deelnemer van hierdie organisasie.
+            add_title: Voeg 'n lid by
+            back: Terug na groepe
+            confirm_remove: Verwyder %{name} uit hierdie groep?
+            email: E-pos
+            empty: Hierdie groep het nog geen lede nie.
+            import: Voer in
+            import_file: CSV-lêer
+            import_help: Een e-pos per ry in die eerste kolom ('n "email"-opskrifry is opsioneel), hoogstens %{rows} rye. Slegs geregistreerde deelnemers van hierdie organisasie word bygevoeg; die ander word in 'n verslag gelys.
+            import_title: Voer lede in vanaf 'n CSV-lêer
+            list_title:
+              one: 1 lid
+              other: '%{count} lede'
+            name: Naam
+            nickname: Bynaam
+            remove: Verwyder uit groep
+            since: Lid sedert
+            slug_help: 'Gebruik hierdie identifiseerder in die Toestemmings-instellings om ''n aksie tot hierdie groep te beperk:'
+            title: Lede van %{name}
+        members_imports:
+          errors:
+            malformed: Die lêer kon nie as UTF-8 CSV gelees word nie.
+            missing_file: Kies 'n CSV-lêer om in te voer.
+            too_large: Die lêer is te groot (hoogstens %{size} KB).
+          show:
+            added:
+              one: 1 deelnemer bygevoeg.
+              other: '%{count} deelnemers bygevoeg.'
+            already_members:
+              one: 1 deelnemer was reeds 'n lid.
+              other: '%{count} deelnemers was reeds lede.'
+            back: Terug na die lede
+            line: Ry
+            reason: Rede
+            reasons:
+              invalid_email: Nie 'n geldige e-posadres nie
+              not_found: Geen deelnemer met hierdie e-pos in hierdie organisasie nie
+            rejected:
+              one: 1 ry verwerp.
+              other: '%{count} rye verwerp.'
+            rejected_title: Verwerpte rye
+            title: Invoer na %{name}
+            truncated: Slegs die eerste %{rows} rye is gelees.
+            value: Waarde
+        menu: Groepe
+      admin_log:
+        add_member: '%{user_name} het %{member_name} by die deelnemergroep %{resource_name} gevoeg'
+        alert: '%{user_name} het die %{recipients_count} lede van die deelnemergroep %{resource_name} oor %{space_title} in kennis gestel'
+        create: '%{user_name} het die deelnemergroep %{resource_name} geskep'
+        delete: '%{user_name} het die deelnemergroep %{resource_name} geskrap'
+        import_members: '%{user_name} het %{added_count} lede in die deelnemergroep %{resource_name} ingevoer (%{rejected_count} rye verwerp)'
+        remove_member: '%{user_name} het %{member_name} uit die deelnemergroep %{resource_name} verwyder'
+        update: '%{user_name} het die deelnemergroep %{resource_name} bygewerk'
+      authorizer:
+        restricted:
+          one: 'Hierdie aksie is net oop vir lede van die groep %{groups}. Groeplidmaatskap word deur die administrateurs bestuur: vra ''n administrateur om jou by die groep te voeg.'
+          other: 'Hierdie aksie is net oop vir lede van die groepe %{groups}. Groeplidmaatskap word deur die administrateurs bestuur: vra ''n administrateur om jou by die groep te voeg.'
+        restricted_any_group: 'Hierdie aksie is net oop vir lede van deelnemergroepe. Groeplidmaatskap word deur die administrateurs bestuur: vra ''n administrateur om jou by die groep te voeg.'
+      member:
+        ask_admin: Groeplidmaatskap word deur die administrateurs bestuur. Vra 'n administrateur om jou by die groep te voeg.
     resident_fields:
       phone_help: Opsioneel. 'n Suid-Afrikaanse selfoonnommer. Dit word privaat gehou en ons stuur nie SMS'e nie.
       surname_help: Opsioneel. Dit word privaat gehou en nooit op jou openbare profiel of langs jou bydraes gewys nie.
@@ -38,6 +180,13 @@ af:
       option: Wyk %{number} — Subraad %{subcouncil} (%{area})
   decidim:
     authorization_handlers:
+      cct_group_membership:
+        explanation: Lidmaatskap van 'n deelnemergroep, deur die administrateurs bestuur. Sommige aksies is net oop vir lede van sekere groepe.
+        fields:
+          allowed_groups: Toegelate groepe
+          allowed_groups_help: Groepidentifiseerders (slugs) geskei deur kommas, byvoorbeeld ward-23-ward-committee. Laat leeg om lede van enige groep toe te laat.
+          groups: Groepe
+        name: Groeplid
       cct_ward_resident:
         explanation: Die wyk waar jy woon, soos in jou rekening gestel. Sommige aksies is net oop vir inwoners van sekere wyke.
         fields:
@@ -57,3 +206,10 @@ af:
           phone_e164: Jou selfoonnommer, in internasionale formaat
           surname: Jou van
           ward: Die wyk waar jy verklaar het jy woon
+    events:
+      cct:
+        group_alert:
+          email_intro: As lid van %{group_name} word jy uitgenooi om deel te neem aan "%{resource_title}".
+          email_outro: Jy het hierdie kennisgewing ontvang omdat 'n administrateur die lede van %{group_name} in kennis gestel het.
+          email_subject: Nuwe uitnodiging vir die lede van %{group_name}
+          notification_title: As lid van %{group_name} word jy uitgenooi om deel te neem aan <a href="%{resource_path}">%{resource_title}</a>.
