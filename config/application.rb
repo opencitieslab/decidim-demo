@@ -29,5 +29,9 @@ module DecidimDemo
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Load nested locale dirs too (e.g. config/locales/decidim/af/*.yml). These are
+    # appended after the gems' locale files, so app translations override Decidim's.
+    config.i18n.load_path += Dir[Rails.root.join("config/locales/**/*.{rb,yml}")]
   end
 end

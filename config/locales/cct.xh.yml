@@ -1,0 +1,7 @@
+# City of Cape Town demo strings (isiXhosa, machine-translated). Missing keys fall back to English.
+xh:
+  locale:
+    name: isiXhosa
+    name_with_error: isiXhosa (impazamo!)
+  cct:
+    demo_label: Umboniso

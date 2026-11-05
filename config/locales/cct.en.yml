@@ -1,0 +1,8 @@
+# City of Cape Town demo strings (English). Machine-translated af/xh live in cct.af.yml / cct.xh.yml.
+en:
+  locale:
+    name: English
+    name_with_error: English (error!)
+  cct:
+    # Placeholder namespace for CCT customisations (groups, registration fields, disclaimer).
+    demo_label: Demo

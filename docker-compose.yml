@@ -9,6 +9,8 @@ x-app: &app
     RAILS_ENV: production
     DATABASE_URL: postgres://decidim:${DATABASE_PASSWORD}@db:5432/decidim_production
     REDIS_URL: redis://redis:6379/0
+    # English, Afrikaans, isiXhosa. Set here (overrides env_file) so existing hosts get it too.
+    DECIDIM_AVAILABLE_LOCALES: en,af,xh
     QUEUE_ADAPTER: sidekiq
     RAILS_LOG_TO_STDOUT: "true"
     RAILS_SERVE_STATIC_FILES: "true"

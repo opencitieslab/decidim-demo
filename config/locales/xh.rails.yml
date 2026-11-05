@@ -1,0 +1,99 @@
+# Minimal Rails base locale for isiXhosa (xh).
+# rails-i18n ships no `xh` file, so this provides the pieces Rails' own helpers
+# need (date/time localisation, number formatting, array sentences). Anything not
+# defined here falls back to English (see config/initializers/cct.rb).
+# Day and month names follow Unicode CLDR (xh). Number format follows South African
+# usage: decimal point, space as the thousands separator.
+xh:
+  i18n:
+    plural:
+      keys:
+        - :one
+        - :other
+  date:
+    abbr_day_names:
+      - Caw
+      - Mvu
+      - Bin
+      - Tha
+      - Sin
+      - Hla
+      - Mgq
+    abbr_month_names:
+      - ~
+      - Jan
+      - Feb
+      - Mat
+      - Epr
+      - Mey
+      - Jun
+      - Jul
+      - Aga
+      - Sep
+      - Okt
+      - Nov
+      - Dis
+    day_names:
+      - Cawe
+      - Mvulo
+      - Lwesibini
+      - Lwesithathu
+      - Lwesine
+      - Lwesihlanu
+      - Mgqibelo
+    month_names:
+      - ~
+      - Janyuwari
+      - Februwari
+      - Matshi
+      - Epreli
+      - Meyi
+      - Juni
+      - Julayi
+      - Agasti
+      - Septemba
+      - Okthobha
+      - Novemba
+      - Disemba
+    formats:
+      default: "%Y-%m-%d"
+      short: "%d %b"
+      long: "%d %B %Y"
+    order:
+      - :day
+      - :month
+      - :year
+  time:
+    am: AM
+    pm: PM
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%d %B %Y %H:%M"
+  number:
+    format:
+      delimiter: " "
+      separator: "."
+      precision: 3
+      round_mode: default
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        delimiter: " "
+        separator: "."
+        format: "%u%n"
+        negative_format: "-%u%n"
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+        unit: R
+    percentage:
+      format:
+        delimiter: ""
+        format: "%n%"
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " kunye "
+      last_word_connector: ", kunye "

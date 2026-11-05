@@ -14,6 +14,7 @@ It runs on one EC2 host in AWS `af-south-1` (Cape Town). Docker Compose runs the
 | `Dockerfile` | Multi-stage build. There's no official 0.32.x image, so we build our own |
 | `docker-compose.yml`, `Caddyfile` | The stack |
 | `docker-compose.test.yml`, `spec/` | RSpec harness (`test` Dockerfile stage, own Postgres/Redis) |
+| `config/initializers/cct.rb`, `config/locales/` | City of Cape Town customisations; en/af/xh locales |
 | `deploy/provision.sh` | Creates the EC2 host: security group, key pair, instance, Elastic IP and daily snapshots. Everything is tagged `Project=decidim-demo` |
 | `deploy/dns.sh` | Cloudflare A record (DNS-only), plus the SES domain identity with DKIM, SPF and DMARC records |
 | `deploy/deploy.sh` | Copies `HEAD` to the host, builds, runs migrations, restarts and installs cron |
@@ -40,6 +41,8 @@ dc exec app bin/rails decidim_system:create_admin
 # https://localhost/system  (Caddy's local CA, so accept the certificate warning)
 # On the host, deploy.sh symlinks .env -> .env.production, so plain `docker compose` works there.
 ```
+
+The interface is available in English, Afrikaans and isiXhosa (`DECIDIM_AVAILABLE_LOCALES=en,af,xh`, set in `docker-compose.yml`). Switch with the language chooser or the locale path prefix (`https://localhost/af/`, `/xh/`). Strings missing in af/xh fall back to English (`config/initializers/cct.rb`). The organisation must also have the three locales enabled (System → Organisations → edit).
 
 ### Local loop: change → reset → verify
 

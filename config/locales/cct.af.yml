@@ -1,0 +1,7 @@
+# City of Cape Town demo strings (Afrikaans, machine-translated). Missing keys fall back to English.
+af:
+  locale:
+    name: Afrikaans
+    name_with_error: Afrikaans (fout!)
+  cct:
+    demo_label: Demonstrasie
