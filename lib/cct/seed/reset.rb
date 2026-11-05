@@ -37,6 +37,8 @@ module Cct
           stats[:meeting_registrations] = destroy_all(Decidim::Meetings::Registration.where(decidim_user_id: user_ids))
           stats[:projects] = destroy_logged(fictional_projects(organization, content))
 
+          stats[:groups] = destroy_groups(organization, users)
+
           Decidim::ActionLog.where(user_id: user_ids).delete_all
           users.each(&:destroy!)
           stats[:users] = users.size
@@ -66,6 +68,20 @@ module Cct
       end
 
       def destroy_all(scope) = scope.destroy_all.size
+
+      # Seeded demo groups (their real members, if an admin added any, lose the group's access),
+      # then the fictional users' remaining group authorizations.
+      def destroy_groups(organization, users)
+        return 0 unless defined?(Cct::Groups::Group) && Cct::Groups::Group.table_exists?
+
+        groups = Cct::Groups.for(organization).seeded.to_a
+        groups.each do |group|
+          Decidim::ActionLog.where(resource_type: group.class.name, resource_id: group.id).delete_all
+          Cct::Groups.destroy_group!(group)
+        end
+        users.each { |user| Cct::Groups.remove_user!(user) }
+        groups.size
+      end
     end
   end
 end

@@ -231,7 +231,6 @@ RSpec.describe Cct::Seed do
 
     expect(organization.reload.available_authorizations).to include("cct_ward_resident")
     expect(log.string).to include("ward restriction: voting in the ward 23 budget limited to ward 23 residents")
-    expect(log.string).to include("groups: skipped", "group restriction: skipped") # plan U5 not installed yet
 
     budget = Decidim::Budgets::Budget.where(component: components).find_by("title ->> 'en' LIKE 'Ward 23 %'")
     status_for = lambda do |ward|
@@ -253,10 +252,11 @@ RSpec.describe Cct::Seed do
 
   it "runs without the U4/U5 workflows and logs the skipped restriction steps" do
     installed = Decidim::Verifications.workflows.dup
-    Decidim::Verifications.reset_workflows(*installed.reject { |workflow| workflow.name == "cct_ward_resident" })
+    Decidim::Verifications.reset_workflows(*installed.reject { |workflow| %w(cct_ward_resident cct_group_membership).include?(workflow.name) })
     seed!
 
-    expect(organization.reload.available_authorizations).not_to include("cct_ward_resident")
+    expect(organization.reload.available_authorizations).not_to include("cct_ward_resident", "cct_group_membership")
+    expect(Cct::Groups.for(organization)).to be_empty
     expect(log.string).to include("groups: skipped")
     expect(log.string).to include("ward restriction: skipped")
     expect(log.string).to include("group restriction: skipped")

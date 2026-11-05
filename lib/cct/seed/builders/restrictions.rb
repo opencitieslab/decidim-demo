@@ -22,13 +22,35 @@ module Cct
 
         def workflow?(name) = Decidim::Verifications.workflows.any? { |workflow| workflow.name == name }
 
+        # The demo groups of demo_content.yml (keyed by slug) with their fictional members. Seeded
+        # groups are marked (`seeded`) so reset_demo_content removes them; members an admin added to
+        # them by hand are kept on rerun.
         def groups!
-          if defined?(::CctGroups::Group)
-            log "groups: the CctGroups engine is present, but group seeding is wired up with U5; " \
-                "#{data.groups.size} demo groups are described in demo_content.yml"
-          else
-            log "groups: skipped (user groups engine, plan U5, not installed); #{data.groups.size} demo groups are described in demo_content.yml"
+          return log("groups: skipped (#{GROUP_WORKFLOW} authorization, plan U5, not installed)") unless workflow?(GROUP_WORKFLOW)
+
+          data.groups.each do |entry|
+            slug = entry.fetch("key")
+            group = Cct::Groups::Group.find_or_initialize_by(organization:, slug:)
+            if group.persisted? && !group.seeded?
+              warn "groups: #{slug} exists and was not created by the seed; leaving it alone"
+              next
+            end
+
+            created = group.new_record?
+            group.name = data.complete(entry.fetch("name"), "groups.#{slug}.name")
+            group.description = data.complete(entry.fetch("description", {}), "groups.#{slug}.description") if entry["description"]
+            group.seeded = true
+            group.save!
+            count(:groups) if created
+
+            Array(entry["members"]).each do |key|
+              user = ctx.users[key]
+              next warn("groups: #{slug} member #{key} is not a seeded user") unless user
+
+              Cct::Groups.add_member!(group, user)
+            end
           end
+          log "groups: #{data.groups.size} demo groups"
         end
 
         # The first showcase ward's budget can only be voted on by residents of that ward.
