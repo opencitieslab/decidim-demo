@@ -13,6 +13,7 @@ It runs on one EC2 host in AWS `af-south-1` (Cape Town). Docker Compose runs the
 | `Gemfile`, `app/`, `config/`, `db/`… | Decidim app generated with `decidim --queue sidekiq --locales en` (pinned to 0.32.2) |
 | `Dockerfile` | Multi-stage build. There's no official 0.32.x image, so we build our own |
 | `docker-compose.yml`, `Caddyfile` | The stack |
+| `docker-compose.test.yml`, `spec/` | RSpec harness (`test` Dockerfile stage, own Postgres/Redis) |
 | `deploy/provision.sh` | Creates the EC2 host: security group, key pair, instance, Elastic IP and daily snapshots. Everything is tagged `Project=decidim-demo` |
 | `deploy/dns.sh` | Cloudflare A record (DNS-only), plus the SES domain identity with DKIM, SPF and DMARC records |
 | `deploy/deploy.sh` | Copies `HEAD` to the host, builds, runs migrations, restarts and installs cron |
@@ -39,6 +40,30 @@ dc exec app bin/rails decidim_system:create_admin
 # https://localhost/system  (Caddy's local CA, so accept the certificate warning)
 # On the host, deploy.sh symlinks .env -> .env.production, so plain `docker compose` works there.
 ```
+
+### Local loop: change → reset → verify
+
+```bash
+dc down -v                                   # wipe the local DB, Redis and uploads (local only!)
+dc up -d --build
+dc exec app bin/rails db:create db:migrate   # never db:seed / db:prepare (default accounts)
+dc exec app bin/rails cct:seed               # (from U6) real CCT data + labelled demo content
+dc stop                                      # when done, to free RAM
+```
+
+### Specs
+
+Specs run in a separate Compose project (`docker-compose.test.yml`, project `decidim-demo-test`) with its own Postgres (tmpfs) and Redis, so they never touch the local stack's data. The `test` Dockerfile stage adds the dev/test gems (`decidim-dev`, `rspec-rails`, FactoryBot) and pre-compiled test packs; the production image (the default, last stage) is unchanged.
+
+```bash
+alias dct='docker compose -f docker-compose.test.yml'
+dct build                                    # again after Gemfile, package.json or app/packs changes
+dct run --rm test                            # whole suite (creates + migrates the test DB first)
+dct run --rm test bundle exec rspec spec/i18n/locales_spec.rb
+dct down -v                                  # stop and drop the test DB
+```
+
+`app/`, `config/`, `db/`, `lib/` and `spec/` are bind-mounted, so edits there need no rebuild. Specs load Decidim's factories and helpers from `decidim-dev` (`spec/rails_helper.rb`, `spec/factories.rb`).
 
 ## First deploy
 

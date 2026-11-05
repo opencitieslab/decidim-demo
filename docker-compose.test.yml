@@ -1,0 +1,65 @@
+# Test harness — RSpec with decidim-dev, isolated from the local/prod stack.
+# Separate Compose project (own network, Postgres and Redis), so a spec run never
+# touches the data of `docker compose --env-file .env.production ...`.
+#
+#   docker compose -f docker-compose.test.yml build
+#   docker compose -f docker-compose.test.yml run --rm test                      # whole suite
+#   docker compose -f docker-compose.test.yml run --rm test bundle exec rspec spec/i18n
+#   docker compose -f docker-compose.test.yml down -v                            # throw the test DB away
+name: decidim-demo-test
+
+services:
+  test:
+    build:
+      context: .
+      target: test
+    image: decidim-demo-test:latest
+    environment:
+      RAILS_ENV: test
+      DISABLE_SPRING: "1"
+      DATABASE_HOST: db
+      DATABASE_USERNAME: decidim
+      DATABASE_PASSWORD: decidim
+      REDIS_URL: redis://redis:6379/0
+      DECIDIM_AVAILABLE_LOCALES: en,af,xh
+      DECIDIM_DEFAULT_LOCALE: en
+      # db:migrate would otherwise dump db/schema.rb into the bind-mounted repo
+      SCHEMA: /tmp/schema.rb
+    # Create + migrate the test DB (never db:seed / db:prepare), then run the command.
+    entrypoint:
+      - bash
+      - -c
+      - bin/rails db:create db:migrate >/dev/null && exec "$$@"
+      - --
+    command: ["bundle", "exec", "rspec"]
+    volumes:
+      # Live source for the dirs we edit, so a spec/app/config change needs no rebuild.
+      # (Not the whole repo: ./.env holds operator credentials and must not enter containers.
+      # Gemfile, package.json or app/packs changes need `build`.)
+      - ./app:/app/app
+      - ./config:/app/config
+      - ./db:/app/db
+      - ./lib:/app/lib
+      - ./spec:/app/spec
+      - ./.rspec:/app/.rspec
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: decidim
+      POSTGRES_PASSWORD: decidim
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U decidim"]
+      interval: 2s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7
