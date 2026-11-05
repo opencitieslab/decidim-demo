@@ -50,9 +50,30 @@ The interface is available in English, Afrikaans and isiXhosa (`DECIDIM_AVAILABL
 dc down -v                                   # wipe the local DB, Redis and uploads (local only!)
 dc up -d --build
 dc exec app bin/rails db:create db:migrate   # never db:seed / db:prepare (default accounts)
-dc exec app bin/rails cct:seed               # (from U6) real CCT data + labelled demo content
+dc exec app bin/rails cct:seed               # real CCT data + labelled demo content (idempotent)
 dc stop                                      # when done, to free RAM
 ```
+
+### CCT demo seed
+
+`bin/rails cct:seed` builds the City of Cape Town demo in the organisation (the only one, or the one named by `CCT_SEED_HOST`). It reads two files:
+
+- `db/seeds/cct/cct-seed-sources.json`: real, sourced data. It covers the 20 subcouncils and 118 wards (117 and 118 are inferred and flagged), the IDP themes, 25 participation items from 2025–26, and the 2026/27 budget.
+- `db/seeds/cct/demo_content.yml`: the fictional layer and every en/af/xh string the seed writes. That covers users, proposals, comments, supports, answers, demo groups and "Demo idea" projects.
+
+It renames the organisation "City of Cape Town — Demo", enables en/af/xh and adds the sitewide "Demonstration only" banner. It also creates:
+
+- Area, Theme and Directorate taxonomies;
+- the "Have your say 2025–26" process group with one process per real item;
+- the "Ward Allocations 2026/27" budgets;
+- 33 illustrative meetings at the subcouncil offices;
+- the "About this demo" page.
+
+Reruns update in place. Colours, logo, hosts and admin accounts are never touched, and Decidim's own `db:seed` is never run.
+
+- `bin/rails cct:seed:reset_demo_content` deletes only the fictional layer: the seed-marked `@example.org` users and what they authored, plus the "Demo idea" projects. Run `cct:seed` again to restore it.
+- `CCT_SEED_SOURCES` / `CCT_SEED_CONTENT` point the seed at other copies of the data files.
+- Group and ward restriction examples are skipped (logged) until plans U4/U5 are installed.
 
 ### Specs
 
