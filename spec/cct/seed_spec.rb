@@ -226,12 +226,42 @@ RSpec.describe Cct::Seed do
     expect_trilingual(page.content, "terms-of-service content")
   end
 
-  it "runs without the U4/U5 features and logs the skipped restriction steps" do
+  it "enables the ward workflow and limits the first showcase ward's budget vote to its residents (plan U4)" do
     seed!
 
+    expect(organization.reload.available_authorizations).to include("cct_ward_resident")
+    expect(log.string).to include("ward restriction: voting in the ward 23 budget limited to ward 23 residents")
+    expect(log.string).to include("groups: skipped", "group restriction: skipped") # plan U5 not installed yet
+
+    budget = Decidim::Budgets::Budget.where(component: components).find_by("title ->> 'en' LIKE 'Ward 23 %'")
+    status_for = lambda do |ward|
+      user = create(:user, :confirmed, organization:, extended_data: { "ward" => ward })
+      Cct::WardResidency.sync!(user)
+      Decidim::ActionAuthorizer.new(user, "vote", budget.component, budget).authorize
+    end
+    expect(status_for.call(23)).to be_ok
+    expect(status_for.call(12).global_code).to eq(:unauthorized)
+
+    other_ward = Decidim::Budgets::Budget.where(component: budget.component).where.not(id: budget.id).first
+    user = create(:user, :confirmed, organization:, extended_data: { "ward" => 12 })
+    Cct::WardResidency.sync!(user)
+    expect(Decidim::ActionAuthorizer.new(user, "vote", budget.component, other_ward).authorize).to be_ok
+
+    seed!
+    expect(organization.reload.available_authorizations.count("cct_ward_resident")).to eq(1)
+  end
+
+  it "runs without the U4/U5 workflows and logs the skipped restriction steps" do
+    installed = Decidim::Verifications.workflows.dup
+    Decidim::Verifications.reset_workflows(*installed.reject { |workflow| workflow.name == "cct_ward_resident" })
+    seed!
+
+    expect(organization.reload.available_authorizations).not_to include("cct_ward_resident")
     expect(log.string).to include("groups: skipped")
     expect(log.string).to include("ward restriction: skipped")
     expect(log.string).to include("group restriction: skipped")
+  ensure
+    Decidim::Verifications.reset_workflows(*installed)
   end
 
   describe "reset_demo_content" do

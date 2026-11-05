@@ -9,6 +9,7 @@ module Cct
       class Restrictions < Base
         WARD_WORKFLOW = "cct_ward_resident"
         GROUP_WORKFLOW = "cct_group_membership"
+        WORKFLOWS = [WARD_WORKFLOW, GROUP_WORKFLOW].freeze
         RESTRICTED_BYLAW = "short-term-letting-bylaw"
 
         def call

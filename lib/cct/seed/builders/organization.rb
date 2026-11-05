@@ -4,8 +4,8 @@ module Cct
   module Seed
     module Builders
       # Updates the existing organization: demo name, en/af/xh, time zone, the sitewide
-      # "Demonstration only" banner and the homepage blocks. Colours, logo, hosts, SMTP and users
-      # are left as they are.
+      # "Demonstration only" banner, the CCT authorization workflows and the homepage blocks.
+      # Colours, logo, hosts, SMTP and users are left as they are.
       class Organization < Base
         SOURCE_DOMAINS = %w(www.capetown.gov.za capetown.gov.za capetown.govocal.com openbylaws.org.za).freeze
 
@@ -24,6 +24,7 @@ module Cct
           organization.omnipresent_banner_url = "/pages/#{data.content.dig("pages", "about", "slug")}"
           organization.external_domain_allowlist = Array(organization.external_domain_allowlist) | SOURCE_DOMAINS
           organization.reference_prefix = "CCT" if organization.reference_prefix.blank?
+          organization.available_authorizations = available_authorizations
           organization.save!
           log "organization #{organization.host}: #{organization.name["en"]} (#{LOCALES.join(", ")}, #{TIME_ZONE})"
 
@@ -31,6 +32,13 @@ module Cct
         end
 
         private
+
+        # Enables the CCT authorization workflows that are installed (ward residents, plan U4; user
+        # groups, plan U5), keeping whatever else an admin has enabled.
+        def available_authorizations
+          installed = Decidim::Verifications.workflows.map(&:name)
+          Array(organization.available_authorizations) | (Restrictions::WORKFLOWS & installed)
+        end
 
         def homepage!
           Decidim::ContentBlocksCreator.new(organization).create_default!
