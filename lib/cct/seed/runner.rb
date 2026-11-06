@@ -35,6 +35,9 @@ module Cct
           end
         end
 
+        # Branded images (outside the transaction: ActiveStorage uploads aren't transactional).
+        Images.new(organization:, data:, logger: @logger).call
+
         data.warnings.uniq.each { |warning| @logger.warn("[cct:seed] #{warning}") }
         created = ctx.stats.map { |key, value| "#{key}=#{value}" }.join(", ")
         @logger.info("[cct:seed] done for #{organization.host}#{created.present? ? "; created #{created}" : "; nothing new to create"}")
