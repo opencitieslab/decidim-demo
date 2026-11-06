@@ -1,4 +1,3 @@
-# the following adds a rule for all bots to not index any page that contains a profile or search
+# Demo site: not an official City of Cape Town platform. Keep it out of search engines.
 User-agent: *
-Disallow: /profiles/
-Disallow: /search
+Disallow: /

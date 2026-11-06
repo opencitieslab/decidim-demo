@@ -1,6 +1,9 @@
 {$SITE_ADDRESS} {
 	encode zstd gzip
 
+	# Demo site: ask search engines not to index anything (backs up robots.txt).
+	header X-Robots-Tag "noindex, nofollow"
+
 	# Restrict the Decidim system panel to allow-listed IPs.
 	# Enforced here because Decidim 0.32.2's DECIDIM_SYSTEM_ACCESSLIST_IPS rule is inverted
 	# (it blocks the listed IPs and allows everyone else) — keep that variable EMPTY.
