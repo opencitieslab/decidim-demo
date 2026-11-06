@@ -25,6 +25,8 @@ docker compose up -d db redis
 # NOT db:prepare/db:setup — those run db/seeds.rb, which creates well-known default accounts.
 docker compose run --rm -T app bin/rails db:create db:migrate < /dev/null
 docker compose up -d --remove-orphans
+# Caddyfile is a single-file bind mount and tar replaces the file (new inode), so recreate caddy to load it.
+docker compose up -d --force-recreate --no-deps caddy
 crontab deploy/crontab
 docker image prune -f >/dev/null
 docker compose ps
